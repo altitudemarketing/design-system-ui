@@ -71,7 +71,7 @@ src/
 │   │   │   ├── page.tsx              (Primitives overview)
 │   │   │   └── colors/page.tsx       (22 color palettes)
 │   │   ├── semantic/page.tsx         (Semantic tokens)
-│   │   ├── components/page.tsx       (Component tokens)
+│   │   ├── components/page.tsx         (Component tokens)
 │   │   ├── colors/page.tsx           (UPDATE existing)
 │   │   ├── typography/page.tsx       (UPDATE existing)
 │   │   └── spacing/page.tsx          (UPDATE existing)
@@ -211,15 +211,14 @@ interface Token {
 *   The copy paste buttons and icon styling must be consistent across the app. The colors page particulary looks bad as both copy buttons are inside the color swatch.
 *   On the primitives page, the token flow must be: raw value → primitive → semantic.
 *   On the primitives page, the chips must be styled like other pages, using icons and colored backgrounds.
-*   Copy paste buttons should be next to the value its copying.
-*   Copy paste buttons should have a brief tooltip pop up that says "Variable copied!".
+*   Copy paste buttons should be next to the value its copying.\n*   Copy paste buttons should have a brief tooltip pop up that says "Variable copied!".
 *   The line height visuals should clearly represent the different values.
 *   The tooltip from the copy paste button must display the text and not be cropped by the box its in.
 *   The order of the var flow on the Greenshift page must reflect the raw to Semantic left/right flow that the other pages follow, showing the primitive/raw value on the left flowing through to the framework-specific output on the right.
 *   On the Greenshift page, the hex values must be to the left of the primitive var with an arrow to the right pointing to the primitive.
 *   The section title for Foundations must be renamed to Primitives.
 *   The current Primitive page must be the primitives Overview page, followed by the Colors, Typography, Spacing & Layout pages, so the section follows the same order and hierarchy as the others.
-*   When clicking "Primitives Overview" then "Colors," the active state should only be applied to the "Colors" menu item. The `isActive` function in `Sidebar.tsx` must use exact path matching to prevent both "Overview" and "Colors" from appearing active simultaneously. The original logic using `startsWith` has been replaced with exact matching.
+*   When clicking "Primitives Overview" then "Colors," the active state should only be applied to the \"Colors\" menu item. The `isActive` function in `Sidebar.tsx` must use exact path matching to prevent both \"Overview\" and \"Colors\" from appearing active simultaneously. The original logic using `startsWith` has been replaced with exact matching.
 *   The reference chain on the Greenshift page must flow left-to-right from raw to semantic, showing the primitive/raw value on the left flowing through to the framework-specific output on the right.
 *   All section header icons should be vertically aligned with the corresponding title text.
 *   **Icon Style Rules:**
@@ -232,7 +231,7 @@ interface Token {
     *   Sub section icons must be unique and representative of that section.
     *   For instance, the two-layer architecture icon should be a layer icon, not a palette.
     *   The typography page's H1 title should use the "T" icon.
-    *   The typography "Type Scale" section should use something like "Aa" or 2 different size letters to represent the "scale".
+    *   The typography \"Type Scale\" section should use something like \"Aa\" or 2 different size letters to represent the \"scale\".
 
 ## NAMING CONVENTIONS
 
@@ -390,7 +389,7 @@ The progress tracker reports "28/28 tasks" for Phase 1, but manually counting al
 
 *   The section title for Foundations must be renamed to Primitives.
 *   The current Primitive page must be the primitives Overview page, followed by the Colors, Typography, Spacing & Layout pages, so the section follows the same order and hierarchy as the others.
-*   When clicking "Primitives Overview" then "Colors," the active state should only be applied to the "Colors" menu item. The `isActive` function in `Sidebar.tsx` must use exact path matching to prevent both "Overview" and "Colors" from appearing active simultaneously. The original logic using `startsWith` has been replaced with exact matching.
+*   When clicking "Primitives Overview" then "Colors," the active state should only be applied to the \"Colors\" menu item. The `isActive` function in `Sidebar.tsx` must use exact path matching to prevent both \"Overview\" and \"Colors\" from appearing active simultaneously. The original logic using `startsWith` has been replaced with exact matching.
 *   The reference chain on the Greenshift page must flow left-to-right from raw to semantic, showing the primitive/raw value on the left flowing through to the framework-specific output on the right.
 
 ## MODERNIZATION PLAN
