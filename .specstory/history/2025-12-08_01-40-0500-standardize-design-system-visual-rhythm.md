@@ -1362,6 +1362,88 @@ Based on those updates, give me a detailed prompt to use so that I can update th
 
 _**Agent (model gemini-3-pro-preview, mode Agent)**_
 
+<think><details><summary>Thought Process</summary>
+**Constructing a Comprehensive Prompt**
+
+I'm now focusing on crafting a prompt. It needs to be detailed enough to apply the established style guidelines (Primitives, Components, Typography) consistently across the entire design system documentation. My aim is to make it easy for anyone to implement these design elements effectively.
+
+
+**Formulating the Core Prompt**
+
+I've been working on the prompt. It's taking shape now, and I'm adding critical sections.  I'm ensuring the prompt includes explicit instructions on applying style to new pages based on the "Modernization Plan." It details color usage guidelines, typography changes leveraging the major second scale, and the components needed for the design system. The goal is maintain consistency.
+
+
+**Codifying Design Instructions**
+
+I'm now consolidating the prompt. My aim is to make it easy for the user to copy and paste for quick implementation. I'm focusing on the "Modernization Plan" with explicit instructions. I'm prioritizing color usage, typography using the Major Second scale, and component styling. Included are specifics for `TokenCopyButton`, Stats Cards, Page Headers, and Callouts to guide the design consistency. I'll make sure to note the overall professional aesthetic desired.
+
+
+</details></think>
+
+---
+
+Here is a detailed prompt you can use to update the other pages. It encapsulates all the style rules, component usage, and design philosophy we just established.
+
+***
+
+**Prompt:**
+
+> I need to update this page to match the new "Modernization 2.0" style of our Design System documentation. Please refactor the UI using the following strict guidelines:
+>
+> ### 1. Color System & Theming
+> *   **Eliminate Random Colors:** Do not use arbitrary colors (orange, green, blue) for decoration.
+> *   **Primary Theme (Action/Data):** Use `var(--color-brand)` (Teal) for interactive elements, links, and **key data values** (like numbers in stats cards).
+> *   **Secondary Theme (Structure):** Use `var(--color-secondary)` (Deep Purple) for architectural elements, section headers, and page-level icons.
+> *   **Neutral Foundation:** Use `var(--color-muted)` for labels and secondary text.
+> *   **Backgrounds:** Replace hardcoded hex tints (e.g., `#3b82f610`) with semantic `rgba` values or standard tokens if available.
+>
+> ### 2. Typography
+> *   **Scale:** Ensure all headings use the **Major Second (`--ms`)** scale (e.g., `var(--font-size-h2--ms)`) to prevent jarring size jumps.
+> *   **Body:** Use `var(--line-height-relaxed)` for descriptive paragraphs (`max-width: 65ch`).
+>
+> ### 3. Components & Patterns
+> *   **TokenCopyButton:** Replace any static text display of CSS variables (e.g., `var(--my-token)`) with the `<TokenCopyButton />` component.
+>     *   *Import:* `import { TokenCopyButton } from '@/components/tokens/TokenCopyButton';`
+>     *   *Usage:* `<TokenCopyButton value="var(--token-name)" displayValue="--token-name" variant="primary" />`
+> *   **Page Header:** Follow the standard pattern:
+>     1.  **Breadcrumbs** (Links: Muted -> Current: Foreground).
+>     2.  **Icon Box:** 56x56px, Rounded-XL, using `var(--color-secondary)` for the icon and a 10% opacity tint for the background.
+>     3.  **Title:** H2 weight 700.
+>     4.  **Description:** Body size, Muted color.
+> *   **Stats/Cards:** Uniform design:
+>     *   **Value:** `var(--color-brand)`, Bold, H4 size.
+>     *   **Label:** `var(--color-muted)`, Caption size, Uppercase tracking.
+>     *   **Container:** `var(--color-card)` background, `var(--radius-xl)` border radius, standard border.
+>
+> ### 4. Layout
+> *   Ensure strictly 4px/8px grid usage (`var(--spacing-4)`, `var(--spacing-8)`).
+> *   Align all content to `max-width: var(--layout-
+
+---
+
+
+
+---
+
+6xl)`.
+>
+> Please apply these changes to the current file.
+
+---
+
+_**User (2025-12-08 01:50-0500)**_
+
+Verify these issues exist and fix them:
+
+Bug 1:
+The progress tracker reports "28/28 tasks" for Phase 1, but manually counting all checkbox items across sections 1.1-1.7 yields 31 completed items (11+6+6+1+1+1+5). The task count appears to be outdated and does not reflect the actual number of checklist items present in the phase documentation.
+
+ @.cursor/rules/derived-cursor-rules.mdc:362-363 @.cursor/rules/derived-cursor-rules.mdc:243-302 
+
+---
+
+_**Agent (model gemini-3-pro-preview, mode Agent)**_
+
 
 
 ---

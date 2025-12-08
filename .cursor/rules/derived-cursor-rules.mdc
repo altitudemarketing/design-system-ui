@@ -16,9 +16,10 @@ globs: *
 
 *   **Last Updated:** December 8, 2025
 *   **Status:** Implementation In Progress
-*   **Current Phase:** Phase 1.7 - Update Existing Pages
-*   Update the Altitude Design System documentation app to reflect the new 5-layer token architecture and provide interactive tools for exploring token relationships.
+*   **Current Phase:** Phase 2.1 - Token Flow Diagram Component
 *   When updating the design system app's UI, always use the design system itself and best practices in UI and visual rhythm to standardize the use of color, giving each color a purpose. Prefer shades over using too many distracting colors.
+*   When modernizing the design system, follow the "Modernization 2.0" style guidelines, which include strict guidelines for the color system, typography, and component usage.
+*   Reference the `styleguide.md` file for detailed Modernization 2.0 style rules.
 
 ### Token Architecture Layers
 
@@ -69,8 +70,7 @@ src/
 │   │   ├── primitives/
 │   │   │   ├── page.tsx              (Primitives overview)
 │   │   │   └── colors/page.tsx       (22 color palettes)
-│   │   ├── semantic/page.tsx         (Semantic tokens)
-│   │   ├── components/page.tsx         (Component tokens)  
+│   │   ├── semantic/page.tsx         (Semantic tokens)\n│   │   ├── components/page.tsx         (Component tokens)
 │   │   ├── colors/page.tsx           (UPDATE existing)
 │   │   ├── typography/page.tsx       (UPDATE existing)
 │   │   └── spacing/page.tsx          (UPDATE existing)
@@ -164,6 +164,7 @@ interface Token {
 - Current App: `http://localhost:3000`
 - Figma Import Guide: `/tokens/IMPORT-GUIDE.md`
 - CSS Reference: `/tokens/css-variables-reference.md`
+- Modernization 2.0 Styleguide: `/styleguide.md`
 
 ## WORKFLOW & RELEASE RULES
 
@@ -215,6 +216,22 @@ interface Token {
 *   The tooltip from the copy paste button must display the text and not be cropped by the box its in.
 *   The order of the var flow on the Greenshift page must reflect the raw to Semantic left/right flow that the other pages follow, showing the primitive/raw value on the left flowing through to the framework-specific output on the right.
 *   On the Greenshift page, the hex values must be to the left of the primitive var with an arrow to the right pointing to the primitive.
+*   The section title for Foundations must be renamed to Primitives.
+*   The current Primitive page must be the primitives Overview page, followed by the Colors, Typography, Spacing & Layout pages, so the section follows the same order and hierarchy as the others.
+*   When clicking "Primitives Overview" then "Colors," the active state should only be applied to the "Colors" menu item. The `isActive` function in `Sidebar.tsx` must use exact path matching to prevent both "Overview" and "Colors" from appearing active simultaneously. The original logic using `startsWith` has been replaced with exact matching.
+*   The reference chain on the Greenshift page must flow left-to-right from raw to semantic, showing the primitive/raw value on the left flowing through to the framework-specific output on the right.
+*   All section header icons should be vertically aligned with the corresponding title text.
+*   **Icon Style Rules:**
+    *   **H1 Page Titles:** Use `var(--color-secondary)` icon with white background (`var(--color-card)`) and a light thin border (`1px solid rgba(68, 75, 140, 0.2)`).
+    *   **Small Icons Inside a Callout:** Use a dark purple icon only (`var(--color-secondary)`) with no border or background.
+    *   **H2 Titles and Icon Pairs:** Use `var(--color-secondary)` icon, light purple background (`rgba(68, 75, 140, 0.08)`), and no border.
+    *   All icons should be visually centered vertically with their title by matching the title's line-height.
+*   Icons used for page or section titles must be unique and representative of the area being referenced.
+    *   The H1 icon must match what is used in the sidebar menu icon.
+    *   Sub section icons must be unique and representative of that section.
+    *   For instance, the two-layer architecture icon should be a layer icon, not a palette.
+    *   The typography page's H1 title should use the "T" icon.
+    *   The typography "Type Scale" section should use something like "Aa" or 2 different size letters to represent the "scale".
 
 ## NAMING CONVENTIONS
 
@@ -240,6 +257,8 @@ interface Token {
 
 ### Phase 1: Documentation & Updates
 > **Goal:** Update all existing pages with new token data and add comprehensive documentation
+
+The progress tracker reports "28/28 tasks" for Phase 1, but manually counting all checkbox items across sections 1.1-1.7 yields 31 completed items (11+6+6+1+1+1+5). The task count appears to be outdated and does not reflect the actual number of checklist items present in the phase documentation. The updated count is reflected below.
 
 #### 1.1 Data Layer Setup
 - [x] Create TypeScript interfaces for token structure (`lib/types.ts`)
@@ -360,11 +379,11 @@ interface Token {
 
 | Phase | Status | Progress |
 |-------|--------|----------|
-| Phase 1: Documentation | 🟢 Complete | 28/28 tasks |
+| Phase 1: Documentation | 🟢 Complete | 31/31 tasks |
 | Phase 2: Relationships | ⚪ Pending | 0/9 tasks |
 | Phase 3: Export/Import | ⚪ Pending | 0/12 tasks |
 
-**Total Progress:** 28/49 tasks (57%)
+**Total Progress:** 31/52 tasks (60%)
 
 ## SIDEBAR RULES
 
@@ -394,6 +413,51 @@ The following rules should be followed when modernizing the design system:
 ### 4. Copy Button Implementation
 *   All copy buttons should transform the display of variables, specifically those like `var()`, into actual copy buttons with icons. This should be implemented across all pages, including `PrimitivesPage`.
 
-### 5. Plan of Action
+### 5. Modernization 2.0 Guidelines
+*   When updating pages to match the new "Modernization 2.0" style of the Design System documentation, follow these strict guidelines:
+
+    *   **Color System & Theming:**
+        *   Eliminate Random Colors: Do not use arbitrary colors (orange, green, blue) for decoration.
+        *   Primary Theme (Action/Data): Use `var(--color-brand)` (Teal) for interactive elements, links, and key data values (like numbers in stats cards).
+        *   Secondary Theme (Structure): Use `var(--color-secondary)` (Deep Purple) for architectural elements, section headers, and page-level icons.
+        *   Neutral Foundation: Use `var(--color-muted)` for labels and secondary text.
+        *   Backgrounds: Replace hardcoded hex tints (e.g., `#3b82f610`) with semantic `rgba` values or standard tokens if available.
+    *   **Typography:**
+        *   Scale: Ensure all headings use the Major Second (`--ms`) scale (e.g., `var(--font-size-h2--ms)`) to prevent jarring size jumps.
+        *   Body: Use `var(--line-height-relaxed)` for descriptive paragraphs (`max_width: 65ch`).
+    *   **Components & Patterns:**
+        *   TokenCopyButton: Replace any static text display of CSS variables (e.g., `var(--my-token)`) with the `<TokenCopyButton />` component.
+            *   *Import:* `import { TokenCopyButton } from '@/components/tokens/TokenCopyButton';`
+            *   *Usage:* `<TokenCopyButton value="var(--token-name)" displayValue="--token-name" variant="primary" />`
+        *   Page Header: Follow the standard pattern:
+            1.  Breadcrumbs (Links: Muted -> Current: Foreground).
+            2.  Icon Box: 56x56px, Rounded-XL, using `var(--color-secondary)` for the icon and a 10% opacity tint for the background.
+            3.  Title: H2 weight 700.
+            4.  Description: Body size, Muted color.
+        *   Stats/Cards: Uniform design:
+            *   Value: `var(--color-brand)`, Bold, H4 size.
+            *   Label: `var(--color-muted)`, Caption size, Uppercase tracking.
+            *   Container: `var(--color-card)` background, `var(--radius-xl)` border radius, standard border.
+    *   **Layout:**
+        *   Ensure strictly 4px/8px grid usage (`var(--spacing-4)`, `var(--spacing-8)`).
+        *   Align all content to `max_width: var(--layout-6xl)`.
+
+### 6. Icon Styling
+
+*   Main page title icons: Larger colored icon with neutral background and matching colored border.
+*   Smaller section icons: Colored icon only with no border or background.
+  * Page header icon box (56x56px):
+    * Background: neutral (like `var(--color-card)` or `rgba(0,0,0,0.03)`)
+    * Border: 1px solid matching the icon color (brand or secondary)
+    * Icon: colored (brand or secondary)
+
+### 7. Icon Style Summary
+
+| Element | Style |
+|---|---|
+| Page Header Icon Box |  Background: neutral, Border: 1px solid [icon color], Icon: colored |
+| Section Header Icons |  No background, No border, Icon: colored |
+
+### 8. Plan of Action
 1.  Update `globals.css`: Remap semantic typography tokens to the Major Second (`--ms`) scale.
 2.  Refactor Pages: Update `Primitives`, `Components`, and `Typography` pages to remove inline styles and apply the new color theme and copy button implementation.
