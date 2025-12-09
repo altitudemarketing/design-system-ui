@@ -182,7 +182,7 @@ export default function CardsPage() {
                   marginBottom: 'var(--spacing-4)',
                 }}
               >
-                <item.icon className="w-6 h-6" style={{ color: item.color }} />
+                <item.icon className="w-6 h-6" color={item.color} />
               </div>
               <h3 
                 className="font-semibold"

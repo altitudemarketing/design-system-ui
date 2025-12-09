@@ -32,6 +32,8 @@ export function ExportModal({ onClose }: ExportModalProps) {
       brandShade: state.brandColor.shade,
       secondaryFamily: state.secondaryColor.family,
       secondaryShade: state.secondaryColor.shade,
+      accentFamily: state.accentColor.family,
+      accentShade: state.accentColor.shade,
       neutralFamily: state.neutralScale,
     };
     

@@ -153,7 +153,7 @@ export function MockupWebsite({ onElementClick }: MockupWebsiteProps) {
         <div className="grid grid-cols-3 gap-6">
           {/* Card 1 */}
           <FeatureCard
-            icon={<Zap className="w-5 h-5" style={{ color: 'var(--color-accent)' }} />}
+            icon={<Zap className="w-5 h-5" color="var(--color-accent)" />}
             iconBg="var(--color-accent-light)"
             title="Lightning Fast"
             description="Optimized for performance with lazy loading and efficient caching."
@@ -162,7 +162,7 @@ export function MockupWebsite({ onElementClick }: MockupWebsiteProps) {
           
           {/* Card 2 */}
           <FeatureCard
-            icon={<Shield className="w-5 h-5" style={{ color: 'var(--color-accent)' }} />}
+            icon={<Shield className="w-5 h-5" color="var(--color-accent)" />}
             iconBg="var(--color-accent-light)"
             title="Secure"
             description="Enterprise-grade security with end-to-end encryption."
@@ -171,7 +171,7 @@ export function MockupWebsite({ onElementClick }: MockupWebsiteProps) {
           
           {/* Card 3 */}
           <FeatureCard
-            icon={<LayoutGrid className="w-5 h-5" style={{ color: 'var(--color-accent)' }} />}
+            icon={<LayoutGrid className="w-5 h-5" color="var(--color-accent)" />}
             iconBg="var(--color-accent-light)"
             title="Flexible"
             description="Customize everything to match your brand identity."

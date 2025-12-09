@@ -396,4 +396,5 @@ export function useThemeGenerator(): ThemeGeneratorContextValue {
 
 // Re-export types for convenience
 export type { ColorFamily, NeutralFamily, Shade, RadiusPreset, RadiusValues, TypeScale };
-export { RADIUS_PRESETS, SHADES, COLOR_FAMILIES, NEUTRAL_FAMILIES, BRAND_COLOR_FAMILIES } from '@/lib/generator/colorPalettes';
+export { SHADES, COLOR_FAMILIES, NEUTRAL_FAMILIES, BRAND_COLOR_FAMILIES } from '@/lib/generator/colorPalettes';
+export { RADIUS_PRESETS } from '@/lib/generator/cssInjector';

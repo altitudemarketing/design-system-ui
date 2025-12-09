@@ -25,13 +25,13 @@ import {
 // TOKEN FILE LOADING
 // =============================================================================
 
-// Import token data (these will be loaded from public or as static imports)
-import PrimitivesData from '../../../../tokens/01-Primitives.json';
-import TypographyMajorSecondData from '../../../../tokens/02a-Typography-MajorSecond.json';
-import TypographyMajorThirdData from '../../../../tokens/02b-Typography-MajorThird.json';
-import SemanticData from '../../../../tokens/03-Semantic.json';
-import ComponentsData from '../../../../tokens/04-Components.json';
-import GreenshiftData from '../../../../tokens/05-Greenshift.json';
+// Import token data (tokens folder is copied to ui/tokens during build)
+import PrimitivesData from '../../../tokens/01-Primitives.json';
+import TypographyMajorSecondData from '../../../tokens/02a-Typography-MajorSecond.json';
+import TypographyMajorThirdData from '../../../tokens/02b-Typography-MajorThird.json';
+import SemanticData from '../../../tokens/03-Semantic.json';
+import ComponentsData from '../../../tokens/04-Components.json';
+import GreenshiftData from '../../../tokens/05-Greenshift.json';
 
 /** All loaded token collections */
 export const TOKEN_DATA = {

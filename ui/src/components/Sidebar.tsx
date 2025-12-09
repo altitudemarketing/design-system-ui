@@ -23,7 +23,7 @@ import {
 interface NavItem {
   name: string;
   href: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: React.ComponentType<{ className?: string; color?: string }>;
   description?: string;
   children?: NavItem[];
 }
@@ -150,9 +150,7 @@ export function Sidebar() {
                     >
                       <item.icon 
                         className="w-5 h-5 transition-colors"
-                        style={{
-                          color: active ? 'var(--sidebar-accent)' : 'currentColor',
-                        }}
+                        color={active ? 'var(--sidebar-accent)' : 'currentColor'}
                       />
                       <span 
                         className="font-medium transition-colors"
@@ -163,7 +161,7 @@ export function Sidebar() {
                       {active && (
                         <ChevronRight 
                           className="w-4 h-4 ml-auto"
-                          style={{ color: 'var(--sidebar-accent)' }}
+                          color="var(--sidebar-accent)"
                         />
                       )}
                     </Link>
@@ -185,11 +183,8 @@ export function Sidebar() {
                                 }}
                               >
                                 <child.icon 
-                                  className="w-4 h-4"
-                                  style={{
-                                    color: childActive ? 'var(--sidebar-accent)' : 'currentColor',
-                                    opacity: 0.8,
-                                  }}
+                                  className="w-4 h-4 opacity-80"
+                                  color={childActive ? 'var(--sidebar-accent)' : 'currentColor'}
                                 />
                                 <span 
                                   className="font-medium"

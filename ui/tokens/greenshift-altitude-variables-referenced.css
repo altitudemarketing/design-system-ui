@@ -1,0 +1,464 @@
+/**
+ * Altitude Design System - Greenshift CSS Variables
+ * 
+ * WordPress/Greenshift compatible CSS custom properties
+ * Based on the Altitude Design System token architecture
+ * 
+ * IMPORTANT: This stylesheet preserves the token reference chain.
+ * It requires the full Altitude Design System variable stack:
+ * 1. Primitives (01-Primitives.css)
+ * 2. Semantic (03-Semantic.css)
+ * 3. Components (04-Components.css)
+ * 4. Greenshift (this file)
+ * 
+ * Benefits of preserved references:
+ * - Change brand colors once at Semantic layer, updates everywhere
+ * - Swap entire color palettes by changing Primitives
+ * - Maintain design system hierarchy
+ * - Easy theme variations and white-labeling
+ * 
+ * Structure:
+ * - Root (Light Mode) - Default WordPress preset and custom variables
+ * - Dark Mode - Dark theme overrides
+ */
+
+/* ============================================================================
+   LIGHT MODE (Default)
+   ========================================================================= */
+
+:root {
+  
+  /* --------------------------------------------------------------------------
+     WordPress Preset Colors
+     Used in: Block editor color picker, Greenshift color controls
+     Maps to: Semantic layer tokens
+     -------------------------------------------------------------------------- */
+  
+  /* Brand Colors */
+  --wp--preset--color--brand: var(--semantic-color-brand-default);
+  --wp--preset--color--brand-hover: var(--semantic-color-brand-hover);
+  --wp--preset--color--brand-light: var(--semantic-color-brand-light);
+  --wp--preset--color--brand-dark: var(--semantic-color-brand-dark);
+  
+  /* Secondary Colors */
+  --wp--preset--color--secondary: var(--semantic-color-secondary-default);
+  --wp--preset--color--secondary-hover: var(--semantic-color-secondary-hover);
+  --wp--preset--color--secondary-light: var(--semantic-color-secondary-light);
+  
+  /* Background & Surface */
+  --wp--preset--color--background: var(--semantic-color-background-default);
+  --wp--preset--color--background-alt: var(--semantic-color-background-alt);
+  --wp--preset--color--surface: var(--semantic-color-surface);
+  
+  /* Card */
+  --wp--preset--color--card-base: var(--semantic-color-card-background);
+  --wp--preset--color--card-border: var(--semantic-color-card-border);
+  --wp--preset--color--card-text: var(--semantic-color-text-foreground);
+  
+  /* Text Colors */
+  --wp--preset--color--muted: var(--semantic-color-text-muted);
+  --wp--preset--color--subtle: var(--semantic-color-text-subtle);
+  --wp--preset--color--text-on-brand: var(--semantic-color-text-on-brand);
+  --wp--preset--color--text-on-secondary: var(--semantic-color-text-on-secondary);
+  
+  /* Border */
+  --wp--preset--color--border: var(--semantic-color-border-default);
+  --wp--preset--color--border-strong: var(--semantic-color-border-strong);
+  
+  /* Status Colors */
+  --wp--preset--color--success: var(--semantic-color-status-success);
+  --wp--preset--color--warning: var(--semantic-color-status-warning);
+  --wp--preset--color--error: var(--semantic-color-status-error);
+  --wp--preset--color--info: var(--semantic-color-status-info);
+  
+  /* Base */
+  --wp--preset--color--base: var(--semantic-color-base);
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Button
+     Used in: Button blocks, custom button components
+     Maps to: Components layer tokens
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--button--background: var(--component-button-background-default);
+  --wp--custom--button--background-hover: var(--component-button-background-hover);
+  --wp--custom--button--text: var(--component-button-text);
+  --wp--custom--button--border-radius: var(--component-button-radius);
+  --wp--custom--button--spacing--horizontal: var(--component-button-padding-x);
+  --wp--custom--button--spacing--vertical: var(--component-button-padding-y);
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Card
+     Used in: Card blocks, custom card components
+     Maps to: Components layer tokens
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--card--border-radius: var(--component-card-radius);
+  --wp--custom--card--spacing: var(--component-card-padding);
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Input
+     Used in: Form inputs, search fields
+     Maps to: Components layer tokens
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--input--background: var(--component-input-background);
+  --wp--custom--input--border: var(--component-input-border-default);
+  --wp--custom--input--border-radius: var(--component-input-radius);
+  --wp--custom--input--spacing--horizontal: var(--component-input-padding-x);
+  --wp--custom--input--spacing--vertical: var(--component-input-padding-y);
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Badge
+     Used in: Badge/pill components
+     Maps to: Semantic layer tokens
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--badge--border-radius: var(--semantic-radius-badge);
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Modal
+     Used in: Modal/dialog components
+     Maps to: Semantic layer tokens
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--modal--border-radius: var(--semantic-radius-modal);
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Style Global
+     Used in: Content width constraints, layout
+     Maps to: Semantic layer tokens
+     -------------------------------------------------------------------------- */
+  
+  --wp--style--global--content-size: var(--semantic-layout-content-width);
+  --wp--style--global--wide-size: var(--semantic-layout-wide-width);
+}
+
+
+/* ============================================================================
+   DARK MODE
+   Activate with: <html data-theme="dark"> or <body data-theme="dark">
+   
+   NOTE: In dark mode, the SAME variable names reference different values
+   because Figma's mode system changes the underlying semantic values.
+   No overrides needed here - the semantic layer handles mode switching.
+   ========================================================================= */
+
+[data-theme="dark"] {
+  /* 
+   * Dark mode values are automatically applied through the semantic layer.
+   * The Semantic collection has Light/Dark modes built in.
+   * 
+   * Example flow in dark mode:
+   * --wp--preset--color--brand 
+   *   → var(--semantic-color-brand-default) 
+   *   → Semantic.Dark.Color.Brand.Default 
+   *   → {Primitives.Color.Emerald.400}
+   *   → #34d399
+   * 
+   * If you need dark mode overrides at the Greenshift layer, add them here.
+   * Otherwise, let the semantic layer handle theme switching.
+   */
+}
+
+
+/* ============================================================================
+   ALTERNATIVE DARK MODE ACTIVATION
+   Uncomment the selector pattern you prefer:
+   ========================================================================= */
+
+/* Option 1: Class-based (manual toggle) */
+/*
+.dark-mode {
+  // Dark mode handled by semantic layer mode switching
+}
+*/
+
+/* Option 2: System preference (automatic) */
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    // Dark mode handled by semantic layer mode switching
+  }
+}
+*/
+
+/* Option 3: Combined approach (respect system + allow override) */
+/*
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    // Dark mode handled by semantic layer mode switching
+  }
+}
+
+[data-theme="dark"] {
+  // Dark mode handled by semantic layer mode switching
+}
+*/
+
+
+/* ============================================================================
+   UTILITY CLASSES (Optional)
+   Helper classes using the design system variables
+   ========================================================================= */
+
+/* Brand Backgrounds */
+.bg-brand { background-color: var(--wp--preset--color--brand); }
+.bg-brand-light { background-color: var(--wp--preset--color--brand-light); }
+.bg-surface { background-color: var(--wp--preset--color--surface); }
+
+/* Text Colors */
+.text-muted { color: var(--wp--preset--color--muted); }
+.text-subtle { color: var(--wp--preset--color--subtle); }
+.text-on-brand { color: var(--wp--preset--color--text-on-brand); }
+
+/* Status Colors */
+.text-success { color: var(--wp--preset--color--success); }
+.text-warning { color: var(--wp--preset--color--warning); }
+.text-error { color: var(--wp--preset--color--error); }
+.text-info { color: var(--wp--preset--color--info); }
+
+/* Borders */
+.border-default { border-color: var(--wp--preset--color--border); }
+.border-strong { border-color: var(--wp--preset--color--border-strong); }
+
+/* Border Radius */
+.rounded-button { border-radius: var(--wp--custom--button--border-radius); }
+.rounded-card { border-radius: var(--wp--custom--card--border-radius); }
+.rounded-input { border-radius: var(--wp--custom--input--border-radius); }
+.rounded-badge { border-radius: var(--wp--custom--badge--border-radius); }
+
+/* Spacing */
+.p-card { padding: var(--wp--custom--card--spacing); }
+.px-button { 
+  padding-left: var(--wp--custom--button--spacing--horizontal); 
+  padding-right: var(--wp--custom--button--spacing--horizontal); 
+}
+.py-button { 
+  padding-top: var(--wp--custom--button--spacing--vertical); 
+  padding-bottom: var(--wp--custom--button--spacing--vertical); 
+}
+
+
+/* ============================================================================
+   GREENSHIFT COMPONENT EXAMPLES
+   Example implementations using the variables
+   ========================================================================= */
+
+/* Custom Button Styling */
+.custom-button {
+  background-color: var(--wp--custom--button--background);
+  color: var(--wp--custom--button--text);
+  border-radius: var(--wp--custom--button--border-radius);
+  padding: var(--wp--custom--button--spacing--vertical) var(--wp--custom--button--spacing--horizontal);
+  border: none;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.custom-button:hover {
+  background-color: var(--wp--custom--button--background-hover);
+}
+
+/* Secondary Button Variant */
+.custom-button--secondary {
+  background-color: var(--component-button-secondary-background);
+  color: var(--component-button-secondary-text);
+}
+
+.custom-button--secondary:hover {
+  background-color: var(--component-button-secondary-background-hover);
+}
+
+/* Outline Button Variant */
+.custom-button--outline {
+  background-color: var(--component-button-outline-background);
+  color: var(--component-button-outline-text);
+  border: 1px solid var(--component-button-outline-border);
+}
+
+.custom-button--outline:hover {
+  background-color: var(--component-button-outline-hover-background);
+}
+
+/* Custom Card Styling */
+.custom-card {
+  background-color: var(--wp--preset--color--card-base);
+  border: 1px solid var(--wp--preset--color--card-border);
+  border-radius: var(--wp--custom--card--border-radius);
+  padding: var(--wp--custom--card--spacing);
+  color: var(--wp--preset--color--card-text);
+}
+
+/* Custom Input Styling */
+.custom-input {
+  background-color: var(--wp--custom--input--background);
+  border: 1px solid var(--wp--custom--input--border);
+  border-radius: var(--wp--custom--input--border-radius);
+  padding: var(--wp--custom--input--spacing--vertical) var(--wp--custom--input--spacing--horizontal);
+  color: var(--wp--preset--color--card-text);
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.custom-input:focus {
+  border-color: var(--component-input-border-focus);
+}
+
+.custom-input::placeholder {
+  color: var(--component-input-placeholder);
+}
+
+/* Custom Badge Styling */
+.custom-badge {
+  background-color: var(--wp--preset--color--brand-light);
+  color: var(--wp--preset--color--brand-dark);
+  border-radius: var(--wp--custom--badge--border-radius);
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Status Badges */
+.custom-badge--success {
+  background-color: var(--semantic-color-status-success-light);
+  color: var(--semantic-color-status-success);
+}
+
+.custom-badge--warning {
+  background-color: var(--semantic-color-status-warning-light);
+  color: var(--semantic-color-status-warning);
+}
+
+.custom-badge--error {
+  background-color: var(--semantic-color-status-error-light);
+  color: var(--semantic-color-status-error);
+}
+
+.custom-badge--info {
+  background-color: var(--semantic-color-status-info-light);
+  color: var(--semantic-color-status-info);
+}
+
+/* Layout Container */
+.content-container {
+  max-width: var(--wp--style--global--content-size);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.wide-container {
+  max-width: var(--wp--style--global--wide-size);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/* ============================================================================
+   TOKEN CHAIN REFERENCE
+   Understanding how variables reference each other:
+   ========================================================================= */
+
+/**
+ * GREENSHIFT → COMPONENTS EXAMPLE:
+ * --wp--custom--button--background 
+ *   → var(--component-button-background-default)
+ *   → var(--semantic-color-brand-default)
+ *   → var(--primitives-color-emerald-400)
+ *   → #34d399
+ * 
+ * GREENSHIFT → SEMANTIC EXAMPLE:
+ * --wp--preset--color--brand
+ *   → var(--semantic-color-brand-default)
+ *   → var(--primitives-color-emerald-400)
+ *   → #34d399
+ * 
+ * BENEFITS:
+ * 1. Change Emerald to Blue at Primitives → entire system updates
+ * 2. Swap brand color at Semantic → all brand references update
+ * 3. Adjust button styling at Components → WordPress buttons update
+ * 4. Override at Greenshift layer → only affects WordPress
+ * 
+ * CUSTOMIZATION STRATEGIES:
+ * 
+ * Strategy 1: Brand Color Change (Semantic Layer)
+ * --semantic-color-brand-default: var(--primitives-color-blue-500);
+ * Result: All brand colors across the system become blue
+ * 
+ * Strategy 2: Complete Palette Swap (Primitives Layer)
+ * Replace entire color palette with custom values
+ * Result: New colors propagate through all layers
+ * 
+ * Strategy 3: WordPress-Only Override (Greenshift Layer)
+ * --wp--preset--color--brand: #custom-color;
+ * Result: Only WordPress/Greenshift uses custom color
+ */
+
+
+/* ============================================================================
+   REQUIRED DEPENDENCIES
+   This stylesheet requires these files to be loaded BEFORE it:
+   ========================================================================= */
+
+/**
+ * 1. primitives.css (or equivalent)
+ *    Defines: --primitives-color-*, --primitives-spacing-*, etc.
+ * 
+ * 2. semantic.css (or equivalent)
+ *    Defines: --semantic-color-*, --semantic-radius-*, --semantic-layout-*
+ * 
+ * 3. components.css (or equivalent)
+ *    Defines: --component-button-*, --component-card-*, --component-input-*
+ * 
+ * Load order example:
+ * <link rel="stylesheet" href="01-primitives.css">
+ * <link rel="stylesheet" href="03-semantic.css">
+ * <link rel="stylesheet" href="04-components.css">
+ * <link rel="stylesheet" href="05-greenshift.css">
+ * 
+ * OR concatenate into a single file in this order.
+ */
+
+
+/* ============================================================================
+   FIGMA VARIABLES EXPORT NOTES
+   ========================================================================= */
+
+/**
+ * When exporting from Figma as CSS variables:
+ * 
+ * 1. Export Collections in Order:
+ *    - 01-Primitives → primitives.css
+ *    - 03-Semantic → semantic.css
+ *    - 04-Components → components.css
+ *    - Use this file (05-greenshift.css) as-is
+ * 
+ * 2. Variable Naming:
+ *    Figma variables should export with these prefixes:
+ *    - Primitives: --primitives-*
+ *    - Semantic: --semantic-*
+ *    - Components: --component-*
+ * 
+ * 3. Mode Handling:
+ *    - Semantic Light/Dark modes → :root and [data-theme="dark"]
+ *    - Typography Mobile/Desktop → @media queries
+ * 
+ * 4. Testing the Chain:
+ *    In browser DevTools, inspect a WordPress button:
+ *    background-color: var(--wp--custom--button--background)
+ *      → var(--component-button-background-default)
+ *      → var(--semantic-color-brand-default)
+ *      → var(--primitives-color-emerald-400)
+ *      → #34d399
+ */

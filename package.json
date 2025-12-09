@@ -1,0 +1,9 @@
+{
+  "name": "design-system",
+  "private": true,
+  "scripts": {
+    "build": "cd ui && bun install && bun run build",
+    "dev": "cd ui && bun run dev",
+    "start": "cd ui && bun run start"
+  }
+}

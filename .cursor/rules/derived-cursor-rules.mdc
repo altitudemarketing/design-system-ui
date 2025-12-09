@@ -12,6 +12,9 @@ globs: *
 *   The AI coding assistant can now use Node.js version v22.17.1 for project development.
 *   The AI coding assistant can now use the following libraries: next, react, react-dom, tailwindcss, postcss, autoprefixer and lucide-react.
 *   The AI coding assistant can now use Bun v1.2.19 as a package manager.
+*   The AI coding assistant can now use Next.js version 16.0.7.
+*   The AI coding assistant can now use React version 19.2.0.
+*   The AI coding assistant can now use React-dom version 19.2.0.
 
 ## PROJECT DOCUMENTATION & CONTEXT SYSTEM
 
@@ -22,6 +25,7 @@ globs: *
 *   When modernizing the design system, follow the "Modernization 2.0" style guidelines, which include strict guidelines for the color system, typography, and component usage.
 *   Reference the `styleguide.md` file for detailed Modernization 2.0 style rules.
 *   Refer to the existing UI and `@design-system-ui/styleguide.md` when updating the theme generator plan to incorporate style constraints and functional specifications.
+*   **Project Setup:** Update the `@README.md` file with the current project overview and structure. This rule was extracted from a user interaction on 2025-12-08.
 
 ### Token Architecture Layers
 
@@ -63,19 +67,18 @@ src/
 │   │   └── tokens/
 │   │       ├── route.ts              (GET all tokens)
 │   │       ├── primitives/route.ts
-│   │       ├── semantic/route.ts
-│   │       ├── components/route.ts
-│   │       ├── typography/route.ts
-│   │       ├── greenshift/route.ts
-│   │       └── export/route.ts       (Export theme as CSS/JSON)
+│   │   ├── semantic/route.ts
+│   │   ├── components/route.ts
+│   │   ├── typography/route.ts
+│   │   ├── greenshift/route.ts
+│   │   └── export/route.ts       (Export theme as CSS/JSON)
 │   ├── tokens/
 │   │   ├── primitives/
 │   │   │   ├── page.tsx              (Primitives overview)
 │   │   │   └── colors/page.tsx       (22 color palettes)
 │   │   ├── semantic/page.tsx         (Semantic tokens)\n│   │   ├── components/page.tsx         (Component tokens)
 │   │   ├── colors/page.tsx           (UPDATE existing)
-│   │   ├── typography/page.tsx       (UPDATE existing)
-│   │   └── spacing/page.tsx          (UPDATE existing)\n│   ├── frameworks/
+│   │   ├── typography/page.tsx       (UPDATE existing)\n│   │   └── spacing/page.tsx          (UPDATE existing)\n│   ├── frameworks/
 │   │   └── greenshift/page.tsx       (WordPress mapping)
 │   ├── tools/
 │   │   ├── explorer/page.tsx         (Token playground)
@@ -98,7 +101,7 @@ src/
 │   │   ├── parser.ts                 (Parse JSON tokens)
 │   │   ├── resolver.ts               (Resolve references)
 │   │   ├── chains.ts                 (Build dependency chains)
-│   │   └── export.ts                 (Export utilities)
+│   │   └── export.ts               (Export utilities)
 │   └── types.ts                      (TypeScript interfaces)
 └── data/
     └── tokens/                       (Cached/imported token data)
@@ -175,15 +178,6 @@ interface Token {
 *   **Project Setup:** Update the `@README.md` file with the current project overview and structure.
 *   **Git Ignore:** Add the `old design systems` folder to the `.gitignore` file.
 *   **Package Manager:** Use Bun for package management.
-*   **Vercel Build Configuration:** When deploying to Vercel, if the Next.js app is in a subdirectory (e.g., `app`), configure Vercel as follows:
-    *   **Option 1: Set Root Directory (Recommended):**
-        *   **Root Directory:** `app`
-        *   **Build Command:** `bun run build` (or leave as default)
-        *   **Output Directory:** `.next` (default)
-    *   **Option 2: Custom Build Command:**
-        *   **Root Directory:** `.` (empty/default)
-        *   **Build Command:** `cd app && bun run build`
-        *   **Output Directory:** `app/.next`
 
 ## CODING STANDARDS
 
@@ -283,15 +277,59 @@ interface Token {
 
 ## DEPLOYMENT
 
-*   When deploying to Vercel, if the Next.js app is in a subdirectory (e.g., `app`), configure Vercel as follows:
+*   When deploying to Vercel, if the Next.js app is in a subdirectory (e.g., `ui`), configure Vercel as follows:
     *   **Option 1: Set Root Directory (Recommended):**
-        *   **Root Directory:** `app`
+        *   **Root Directory:** `ui`
         *   **Build Command:** `bun run build` (or leave as default)
         *   **Output Directory:** `.next` (default)
     *   **Option 2: Custom Build Command:**
         *   **Root Directory:** `.` (empty/default)
-        *   **Build Command:** `cd app && bun run build`
-        *   **Output Directory:** `app/.next`
+        *   **Build Command:** `cd ui && bun run build`
+        *   **Output Directory:** `ui/.next`
+*   **Deploying to Vercel:**
+    *   If a Vercel project already exists for the GitHub repository:
+        1.  Go to the Vercel dashboard for the `altitude-projects` team: `https://vercel.com/altitude-projects`
+        2.  Locate the existing project in the project list.
+        3.  Click on the project and navigate to **Settings** → **Git**.
+        4.  Reconnect or reconfigure the GitHub repository connection.
+    *   If deploying via Vercel CLI:
+        1.  Install Vercel CLI globally: `npm i -g vercel`
+        2.  Navigate to the project directory: `cd "/Users/scottfoster/git/design system"` (adjust path as necessary)
+        3.  Login to Vercel: `vercel login` (this will open a browser window).
+        4.  Deploy: `vercel`. When prompted, link to the existing project or create a new one.
+    *   To link to an existing project directly using the Vercel CLI: `vercel link`
+*   **Vercel Deployment Troubleshooting:** If encountering a "repo already exists" error when importing from GitHub, even after deleting existing Vercel projects:
+    1.  **Disconnect the Repo from Vercel's GitHub App:**
+        1.  Go to GitHub → **Settings** → **Applications** → **Installed GitHub Apps** (https://github.com/settings/installations).
+        2.  Find **Vercel** in the list and click **Configure**.
+        3.  Under "Repository access," remove the specific repo and re-add it.
+    2.  **Clear Vercel's Connection:**
+        1.  Go to your Vercel dashboard: `https://vercel.com/altitude-projects`.
+        2.  Click on your **team settings** (gear icon or "Settings" in the sidebar).
+        3.  Go to **Git** or **Integrations** → **GitHub**.
+        4.  Look for any "connected repositories" and disconnect the problematic one.
+    3.  **Alternative: Use Vercel CLI:**
+        ```bash
+        cd "/Users/scottfoster/git/design system"
+        npx vercel --yes
+        ```
+        This will deploy directly and create a new project without needing the GitHub import flow.
+*   **Vercel Build Configuration:** When deploying to Vercel, the Next.js app is in the `ui` subdirectory. Ensure the correct settings are used:
+    *   **Option 1: Set Root Directory (Recommended):**
+        *   **Root Directory:** `ui`
+        *   Update `ui/vercel.json` to the following:
+            ```json
+            {
+              "buildCommand": "cp -r ../tokens . && bun run build"
+            }
+            ```
+        *   Ensure the root `package.json` does not include `next` as a dependency.
+        *   Go to your project → **Settings** → **General** in the Vercel Dashboard.
+        *   Set the **Root Directory** to `ui`.
+    *   **Option 2: Custom Build Command:**
+        *   **Root Directory:** `.` (empty/default)
+        *   **Build Command:** `cd ui && bun run build`
+        *   **Output Directory:** `ui/.next`
 
 ## TODO LIST
 
@@ -481,83 +519,3 @@ The following rules should be followed when modernizing the design system:
             *   Container: `var(--color-card)` background, `var(--radius-xl)` border radius, standard border.
     *   **Layout:**
         *   Ensure strictly 4px/8px grid usage (`var(--spacing-4)`, `var(--spacing-8)`).
-        *   Align all content to `max_width: var(--layout-6xl)`.
-
-### 6. Icon Styling
-
-*   Main page title icons: Larger colored icon with neutral background and matching colored border.
-*   Smaller section icons: Colored icon only with no border or background.
-  * Page header icon box (56x56px):
-    * Background: neutral (like `var(--color-card)` or `rgba(0,0,0,0.03)`)
-    * Border: 1px solid matching the icon color (brand or secondary)
-    * Icon: colored (brand or secondary)
-
-### 7. Icon Style Summary
-
-| Element | Style |
-|---|---|
-| Page Header Icon Box |  Background: neutral, Border: 1px solid [icon color], Icon: colored |
-| Section Header Icons |  No background, No border, Icon: colored |
-
-### 8. Plan of Action
-1.  Update `globals.css`: Remap semantic typography tokens to the Major Second (`--ms`) scale.
-2.  Refactor Pages: Update `Primitives`, `Components`, and `Typography` pages to remove inline styles and apply the new color theme and copy button implementation.
-
-### Theme Generator & Previewer Feature Requirements
-
-**Core Mission:** Bridge the gap between abstract tokens and tangible UI design, empowering users to "paint" with the system.
-
-*   **Educational Visualization**:
-    *   **Goal**: Demystify the "cascade." Show that changing the "Brand" semantic token isn't just picking a color; it's selecting a *Primitive*.
-    *   **Requirement**: UI must explicitly label the layers: `Primitive Source` → `Semantic Token` → `Component Instance`.
-
-*   **Live Exploration (The "Playground")**:
-    *   **Goal**: Allow rapid prototyping of a new visual identity (e.g., "What if our brand was Indigo instead of Emerald?").
-    *   **Requirement**:
-        *   **Color**: Select Primitive families (e.g., Blue, Slate) for key Semantic roles (Brand, Surface, Status).
-        *   **Tweak**: Sliders for fine-tuning (Shade/Tint adjustments).
-        *   **Globals**: Sliders for `Radius` (Small vs. Round) and `Typography` scale (Major Second vs. Major Third).
-
-*   **Fidelity & Preview**:
-    *   **Goal**: Users need to see "real" results, not just abstract swatches.
-    *   **Requirement**: A "Live Mockup" section featuring common UI patterns: a Dashboard Card, a Form, a Modal, and Navigation components. These must react instantly to variable changes.
-
-*   **Exportability**:
-    *   **Goal**: Handover to design.
-    *   **Requirement**: A simple "Export Theme" button that generates a JSON file. This file mimics the structure of `tokens/03-Semantic.json`, ready for import into the Figma Variables plugin.
-
-### 2. Implementation Plan
-
-1.  **State Management (`ThemeBuilderContext`)**:
-    *   Create a React Context to hold the "Draft Theme" state.
-    *   Initial state populates from the existing JSON token files.
-    *   **Action**: `updateSemanticColor(role: 'Brand', primitive: 'Indigo', step: 500)`
-
-2.  **The Interface Layout**:
-    *   **Sidebar/Panel**: "Controls" area. Grouped by "Color Mapping", "Typography", and "Shape".
-    *   **Main Stage**: "Preview" area. A sticky or scrollable view of the Mockup UI.
-
-3.  **Key Components**:
-    *   `TokenMapper`: A specialized dropdown that lists Primitives (with their color swatches) and assigns them to a Semantic slot.
-    *   `VariableInjector`: A wrapper component that writes the current state to inline `style` variables (e.g., `style={{ '--color-brand-default': 'var(--color-indigo-500)' }}`), ensuring performant, instant updates without re-compiling CSS.
-
-### 3. Theme Generator Mockup (HTML/Tailwind)
-
-The AI can generate an HTML mockup of the Theme Generator.
-
-Here is a high-fidelity mockup using HTML and Tailwind classes to demonstrate the layout and interaction model.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design System - Theme Generator</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Simulating the System Variables for the Preview */
-        :root {
-            --radius-preview: 0.5rem;
-            --font-preview: sans-serif;
-            --color-brand-preview: #10b981; /* Default Emerald-50

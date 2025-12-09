@@ -1,0 +1,54 @@
+{
+  "Components": {
+    "modes": {
+      "Default": {
+        "Button": {
+          "Background": {
+            "Default": { "$value": "{Semantic.modes.Light.Color.Brand.Default}", "$type": "color" },
+            "Hover": { "$value": "{Semantic.modes.Light.Color.Brand.Hover}", "$type": "color" }
+          },
+          "Text": { "$value": "{Semantic.modes.Light.Color.Text.OnBrand}", "$type": "color" },
+          "Radius": { "$value": "{Semantic.modes.Light.Radius.Button}", "$type": "number" },
+          "PaddingX": { "$value": "{Primitives.modes.Default.Spacing.5}", "$type": "number" },
+          "PaddingY": { "$value": "{Primitives.modes.Default.Spacing.2-5}", "$type": "number" },
+          "Height": {
+            "sm": { "$value": "{Primitives.modes.Default.Size.10}", "$type": "number" },
+            "md": { "$value": "{Primitives.modes.Default.Size.12}", "$type": "number" },
+            "lg": { "$value": "{Primitives.modes.Default.Size.14}", "$type": "number" }
+          },
+          "Secondary": {
+            "Background": { "$value": "{Semantic.modes.Light.Color.Secondary.Default}", "$type": "color" },
+            "BackgroundHover": { "$value": "{Semantic.modes.Light.Color.Secondary.Hover}", "$type": "color" },
+            "Text": { "$value": "{Semantic.modes.Light.Color.Text.OnSecondary}", "$type": "color" }
+          },
+          "Outline": {
+            "Background": { "$value": "{Primitives.modes.Default.Color.Base.Transparent}", "$type": "color" },
+            "Border": { "$value": "{Semantic.modes.Light.Color.Brand.Default}", "$type": "color" },
+            "Text": { "$value": "{Semantic.modes.Light.Color.Brand.Default}", "$type": "color" },
+            "HoverBackground": { "$value": "{Semantic.modes.Light.Color.Brand.Light}", "$type": "color" }
+          }
+        },
+        "Card": {
+          "Background": { "$value": "{Semantic.modes.Light.Color.Card.Background}", "$type": "color" },
+          "Border": { "$value": "{Semantic.modes.Light.Color.Card.Border}", "$type": "color" },
+          "Text": { "$value": "{Semantic.modes.Light.Color.Text.Foreground}", "$type": "color" },
+          "Radius": { "$value": "{Semantic.modes.Light.Radius.Card}", "$type": "number" },
+          "Padding": { "$value": "{Primitives.modes.Default.Spacing.6}", "$type": "number" }
+        },
+        "Input": {
+          "Background": { "$value": "{Semantic.modes.Light.Color.Surface}", "$type": "color" },
+          "Border": {
+            "Default": { "$value": "{Semantic.modes.Light.Color.Border.Default}", "$type": "color" },
+            "Focus": { "$value": "{Semantic.modes.Light.Color.Brand.Default}", "$type": "color" }
+          },
+          "Radius": { "$value": "{Semantic.modes.Light.Radius.Input}", "$type": "number" },
+          "PaddingX": { "$value": "{Primitives.modes.Default.Spacing.3}", "$type": "number" },
+          "PaddingY": { "$value": "{Primitives.modes.Default.Spacing.2}", "$type": "number" },
+          "Height": { "$value": "{Primitives.modes.Default.Size.10}", "$type": "number" },
+          "Text": { "$value": "{Semantic.modes.Light.Color.Text.Foreground}", "$type": "color" },
+          "Placeholder": { "$value": "{Semantic.modes.Light.Color.Text.Muted}", "$type": "color" }
+        }
+      }
+    }
+  }
+}

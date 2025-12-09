@@ -1,0 +1,122 @@
+{
+  "Semantic": {
+    "modes": {
+      "Light": {
+        "Color": {
+          "Brand": {
+            "Default": { "$value": "{Primitives.modes.Default.Color.Emerald.400}", "$type": "color" },
+            "Hover": { "$value": "{Primitives.modes.Default.Color.Emerald.500}", "$type": "color" },
+            "Light": { "$value": "{Primitives.modes.Default.Color.Emerald.100}", "$type": "color" },
+            "Dark": { "$value": "{Primitives.modes.Default.Color.Emerald.700}", "$type": "color" }
+          },
+          "Secondary": {
+            "Default": { "$value": "{Primitives.modes.Default.Color.Violet.900}", "$type": "color" },
+            "Hover": { "$value": "{Primitives.modes.Default.Color.Violet.950}", "$type": "color" },
+            "Light": { "$value": "{Primitives.modes.Default.Color.Violet.100}", "$type": "color" }
+          },
+          "Background": {
+            "Default": { "$value": "{Primitives.modes.Default.Color.Gray.50}", "$type": "color" },
+            "Alt": { "$value": "{Primitives.modes.Default.Color.Gray.100}", "$type": "color" }
+          },
+          "Surface": { "$value": "{Primitives.modes.Default.Color.Base.White}", "$type": "color" },
+          "Text": {
+            "Foreground": { "$value": "{Primitives.modes.Default.Color.Gray.900}", "$type": "color" },
+            "Muted": { "$value": "{Primitives.modes.Default.Color.Gray.500}", "$type": "color" },
+            "Subtle": { "$value": "{Primitives.modes.Default.Color.Gray.400}", "$type": "color" },
+            "OnBrand": { "$value": "{Primitives.modes.Default.Color.Base.White}", "$type": "color" },
+            "OnSecondary": { "$value": "{Primitives.modes.Default.Color.Base.White}", "$type": "color" }
+          },
+          "Card": {
+            "Background": { "$value": "{Primitives.modes.Default.Color.Base.White}", "$type": "color" },
+            "Border": { "$value": "{Primitives.modes.Default.Color.Gray.200}", "$type": "color" }
+          },
+          "Border": {
+            "Default": { "$value": "{Primitives.modes.Default.Color.Gray.200}", "$type": "color" },
+            "Strong": { "$value": "{Primitives.modes.Default.Color.Gray.300}", "$type": "color" }
+          },
+          "Status": {
+            "Success": { "$value": "{Primitives.modes.Default.Color.Green.500}", "$type": "color" },
+            "SuccessLight": { "$value": "{Primitives.modes.Default.Color.Green.100}", "$type": "color" },
+            "Warning": { "$value": "{Primitives.modes.Default.Color.Amber.500}", "$type": "color" },
+            "WarningLight": { "$value": "{Primitives.modes.Default.Color.Amber.100}", "$type": "color" },
+            "Error": { "$value": "{Primitives.modes.Default.Color.Red.500}", "$type": "color" },
+            "ErrorLight": { "$value": "{Primitives.modes.Default.Color.Red.100}", "$type": "color" },
+            "Info": { "$value": "{Primitives.modes.Default.Color.Blue.500}", "$type": "color" },
+            "InfoLight": { "$value": "{Primitives.modes.Default.Color.Blue.100}", "$type": "color" }
+          },
+          "Base": { "$value": "{Primitives.modes.Default.Color.Slate.950}", "$type": "color" }
+        },
+        "Radius": {
+          "Button": { "$value": "{Primitives.modes.Default.Radius.lg}", "$type": "number" },
+          "Card": { "$value": "{Primitives.modes.Default.Radius.xl}", "$type": "number" },
+          "Input": { "$value": "{Primitives.modes.Default.Radius.md}", "$type": "number" },
+          "Badge": { "$value": "{Primitives.modes.Default.Radius.full}", "$type": "number" },
+          "Modal": { "$value": "{Primitives.modes.Default.Radius.2xl}", "$type": "number" }
+        },
+        "Layout": {
+          "ContentWidth": { "$value": "{Primitives.modes.Default.Layout.5xl}", "$type": "number" },
+          "WideWidth": { "$value": 1440, "$type": "number" },
+          "ProseWidth": { "$value": "{Primitives.modes.Default.Layout.2xl}", "$type": "number" }
+        }
+      },
+      "Dark": {
+        "Color": {
+          "Brand": {
+            "Default": { "$value": "{Primitives.modes.Default.Color.Emerald.400}", "$type": "color" },
+            "Hover": { "$value": "{Primitives.modes.Default.Color.Emerald.300}", "$type": "color" },
+            "Light": { "$value": "{Primitives.modes.Default.Color.Emerald.900}", "$type": "color" },
+            "Dark": { "$value": "{Primitives.modes.Default.Color.Emerald.200}", "$type": "color" }
+          },
+          "Secondary": {
+            "Default": { "$value": "{Primitives.modes.Default.Color.Violet.400}", "$type": "color" },
+            "Hover": { "$value": "{Primitives.modes.Default.Color.Violet.300}", "$type": "color" },
+            "Light": { "$value": "{Primitives.modes.Default.Color.Violet.900}", "$type": "color" }
+          },
+          "Background": {
+            "Default": { "$value": "{Primitives.modes.Default.Color.Gray.950}", "$type": "color" },
+            "Alt": { "$value": "{Primitives.modes.Default.Color.Gray.900}", "$type": "color" }
+          },
+          "Surface": { "$value": "{Primitives.modes.Default.Color.Gray.800}", "$type": "color" },
+          "Text": {
+            "Foreground": { "$value": "{Primitives.modes.Default.Color.Gray.50}", "$type": "color" },
+            "Muted": { "$value": "{Primitives.modes.Default.Color.Gray.400}", "$type": "color" },
+            "Subtle": { "$value": "{Primitives.modes.Default.Color.Gray.500}", "$type": "color" },
+            "OnBrand": { "$value": "{Primitives.modes.Default.Color.Gray.950}", "$type": "color" },
+            "OnSecondary": { "$value": "{Primitives.modes.Default.Color.Base.White}", "$type": "color" }
+          },
+          "Card": {
+            "Background": { "$value": "{Primitives.modes.Default.Color.Gray.800}", "$type": "color" },
+            "Border": { "$value": "{Primitives.modes.Default.Color.Gray.700}", "$type": "color" }
+          },
+          "Border": {
+            "Default": { "$value": "{Primitives.modes.Default.Color.Gray.700}", "$type": "color" },
+            "Strong": { "$value": "{Primitives.modes.Default.Color.Gray.600}", "$type": "color" }
+          },
+          "Status": {
+            "Success": { "$value": "{Primitives.modes.Default.Color.Green.400}", "$type": "color" },
+            "SuccessLight": { "$value": "{Primitives.modes.Default.Color.Green.900}", "$type": "color" },
+            "Warning": { "$value": "{Primitives.modes.Default.Color.Amber.400}", "$type": "color" },
+            "WarningLight": { "$value": "{Primitives.modes.Default.Color.Amber.900}", "$type": "color" },
+            "Error": { "$value": "{Primitives.modes.Default.Color.Red.400}", "$type": "color" },
+            "ErrorLight": { "$value": "{Primitives.modes.Default.Color.Red.900}", "$type": "color" },
+            "Info": { "$value": "{Primitives.modes.Default.Color.Blue.400}", "$type": "color" },
+            "InfoLight": { "$value": "{Primitives.modes.Default.Color.Blue.900}", "$type": "color" }
+          },
+          "Base": { "$value": "{Primitives.modes.Default.Color.Base.White}", "$type": "color" }
+        },
+        "Radius": {
+          "Button": { "$value": "{Primitives.modes.Default.Radius.lg}", "$type": "number" },
+          "Card": { "$value": "{Primitives.modes.Default.Radius.xl}", "$type": "number" },
+          "Input": { "$value": "{Primitives.modes.Default.Radius.md}", "$type": "number" },
+          "Badge": { "$value": "{Primitives.modes.Default.Radius.full}", "$type": "number" },
+          "Modal": { "$value": "{Primitives.modes.Default.Radius.2xl}", "$type": "number" }
+        },
+        "Layout": {
+          "ContentWidth": { "$value": "{Primitives.modes.Default.Layout.5xl}", "$type": "number" },
+          "WideWidth": { "$value": 1440, "$type": "number" },
+          "ProseWidth": { "$value": "{Primitives.modes.Default.Layout.2xl}", "$type": "number" }
+        }
+      }
+    }
+  }
+}

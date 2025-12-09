@@ -1,0 +1,463 @@
+{
+  "Greenshift": {
+    "$description": "WordPress/Greenshift variable mapping layer. Maps WordPress CSS custom properties to Altitude Design System semantic tokens.",
+    "$framework": "greenshift",
+    "$mappingVersion": "1.0.0",
+    "modes": {
+      "Light": {
+        "Preset": {
+          "Color": {
+            "brand": { 
+              "$value": "{Semantic.modes.Light.Color.Brand.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--brand"
+            },
+            "brand-hover": { 
+              "$value": "{Semantic.modes.Light.Color.Brand.Hover}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--brand-hover"
+            },
+            "brand-light": { 
+              "$value": "{Semantic.modes.Light.Color.Brand.Light}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--brand-light"
+            },
+            "brand-dark": { 
+              "$value": "{Semantic.modes.Light.Color.Brand.Dark}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--brand-dark"
+            },
+            "secondary": { 
+              "$value": "{Semantic.modes.Light.Color.Secondary.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--secondary"
+            },
+            "secondary-hover": { 
+              "$value": "{Semantic.modes.Light.Color.Secondary.Hover}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--secondary-hover"
+            },
+            "secondary-light": { 
+              "$value": "{Semantic.modes.Light.Color.Secondary.Light}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--secondary-light"
+            },
+            "background": { 
+              "$value": "{Semantic.modes.Light.Color.Background.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--background"
+            },
+            "background-alt": { 
+              "$value": "{Semantic.modes.Light.Color.Background.Alt}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--background-alt"
+            },
+            "surface": { 
+              "$value": "{Semantic.modes.Light.Color.Surface}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--surface"
+            },
+            "card-base": { 
+              "$value": "{Semantic.modes.Light.Color.Card.Background}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--card-base"
+            },
+            "card-border": { 
+              "$value": "{Semantic.modes.Light.Color.Card.Border}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--card-border"
+            },
+            "card-text": { 
+              "$value": "{Semantic.modes.Light.Color.Text.Foreground}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--card-text"
+            },
+            "muted": { 
+              "$value": "{Semantic.modes.Light.Color.Text.Muted}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--muted"
+            },
+            "subtle": { 
+              "$value": "{Semantic.modes.Light.Color.Text.Subtle}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--subtle"
+            },
+            "border": { 
+              "$value": "{Semantic.modes.Light.Color.Border.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--border"
+            },
+            "border-strong": { 
+              "$value": "{Semantic.modes.Light.Color.Border.Strong}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--border-strong"
+            },
+            "text-on-brand": { 
+              "$value": "{Semantic.modes.Light.Color.Text.OnBrand}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--text-on-brand"
+            },
+            "text-on-secondary": { 
+              "$value": "{Semantic.modes.Light.Color.Text.OnSecondary}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--text-on-secondary"
+            },
+            "success": { 
+              "$value": "{Semantic.modes.Light.Color.Status.Success}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--success"
+            },
+            "warning": { 
+              "$value": "{Semantic.modes.Light.Color.Status.Warning}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--warning"
+            },
+            "error": { 
+              "$value": "{Semantic.modes.Light.Color.Status.Error}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--error"
+            },
+            "info": { 
+              "$value": "{Semantic.modes.Light.Color.Status.Info}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--info"
+            },
+            "base": { 
+              "$value": "{Semantic.modes.Light.Color.Base}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--base"
+            }
+          }
+        },
+        "Custom": {
+          "Button": {
+            "background": { 
+              "$value": "{Components.modes.Default.Button.Background.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--custom--button--background"
+            },
+            "background-hover": { 
+              "$value": "{Components.modes.Default.Button.Background.Hover}", 
+              "$type": "color",
+              "$wpVariable": "--wp--custom--button--background-hover"
+            },
+            "text": { 
+              "$value": "{Components.modes.Default.Button.Text}", 
+              "$type": "color",
+              "$wpVariable": "--wp--custom--button--text"
+            },
+            "border-radius": { 
+              "$value": "{Semantic.modes.Light.Radius.Button}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--button--border-radius"
+            },
+            "spacing-horizontal": { 
+              "$value": "{Primitives.modes.Default.Spacing.5}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--button--spacing--horizontal"
+            },
+            "spacing-vertical": { 
+              "$value": "{Primitives.modes.Default.Spacing.2-5}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--button--spacing--vertical"
+            }
+          },
+          "Card": {
+            "border-radius": { 
+              "$value": "{Semantic.modes.Light.Radius.Card}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--card--border-radius"
+            },
+            "spacing": { 
+              "$value": "{Primitives.modes.Default.Spacing.6}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--card--spacing"
+            }
+          },
+          "Input": {
+            "background": { 
+              "$value": "{Semantic.modes.Light.Color.Surface}", 
+              "$type": "color",
+              "$wpVariable": "--wp--custom--input--background"
+            },
+            "border": { 
+              "$value": "{Semantic.modes.Light.Color.Border.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--custom--input--border"
+            },
+            "border-radius": { 
+              "$value": "{Semantic.modes.Light.Radius.Input}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--input--border-radius"
+            },
+            "spacing-horizontal": { 
+              "$value": "{Primitives.modes.Default.Spacing.3}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--input--spacing--horizontal"
+            },
+            "spacing-vertical": { 
+              "$value": "{Primitives.modes.Default.Spacing.2}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--input--spacing--vertical"
+            }
+          },
+          "Badge": {
+            "border-radius": { 
+              "$value": "{Semantic.modes.Light.Radius.Badge}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--badge--border-radius"
+            }
+          },
+          "Modal": {
+            "border-radius": { 
+              "$value": "{Semantic.modes.Light.Radius.Modal}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--modal--border-radius"
+            }
+          }
+        },
+        "Style": {
+          "Global": {
+            "content-size": { 
+              "$value": "{Semantic.modes.Light.Layout.ContentWidth}", 
+              "$type": "number",
+              "$wpVariable": "--wp--style--global--content-size"
+            },
+            "wide-size": { 
+              "$value": "{Semantic.modes.Light.Layout.WideWidth}", 
+              "$type": "number",
+              "$wpVariable": "--wp--style--global--wide-size"
+            }
+          }
+        }
+      },
+      "Dark": {
+        "Preset": {
+          "Color": {
+            "brand": { 
+              "$value": "{Semantic.modes.Dark.Color.Brand.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--brand"
+            },
+            "brand-hover": { 
+              "$value": "{Semantic.modes.Dark.Color.Brand.Hover}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--brand-hover"
+            },
+            "brand-light": { 
+              "$value": "{Semantic.modes.Dark.Color.Brand.Light}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--brand-light"
+            },
+            "brand-dark": { 
+              "$value": "{Semantic.modes.Dark.Color.Brand.Dark}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--brand-dark"
+            },
+            "secondary": { 
+              "$value": "{Semantic.modes.Dark.Color.Secondary.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--secondary"
+            },
+            "secondary-hover": { 
+              "$value": "{Semantic.modes.Dark.Color.Secondary.Hover}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--secondary-hover"
+            },
+            "secondary-light": { 
+              "$value": "{Semantic.modes.Dark.Color.Secondary.Light}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--secondary-light"
+            },
+            "background": { 
+              "$value": "{Semantic.modes.Dark.Color.Background.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--background"
+            },
+            "background-alt": { 
+              "$value": "{Semantic.modes.Dark.Color.Background.Alt}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--background-alt"
+            },
+            "surface": { 
+              "$value": "{Semantic.modes.Dark.Color.Surface}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--surface"
+            },
+            "card-base": { 
+              "$value": "{Semantic.modes.Dark.Color.Card.Background}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--card-base"
+            },
+            "card-border": { 
+              "$value": "{Semantic.modes.Dark.Color.Card.Border}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--card-border"
+            },
+            "card-text": { 
+              "$value": "{Semantic.modes.Dark.Color.Text.Foreground}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--card-text"
+            },
+            "muted": { 
+              "$value": "{Semantic.modes.Dark.Color.Text.Muted}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--muted"
+            },
+            "subtle": { 
+              "$value": "{Semantic.modes.Dark.Color.Text.Subtle}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--subtle"
+            },
+            "border": { 
+              "$value": "{Semantic.modes.Dark.Color.Border.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--border"
+            },
+            "border-strong": { 
+              "$value": "{Semantic.modes.Dark.Color.Border.Strong}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--border-strong"
+            },
+            "text-on-brand": { 
+              "$value": "{Semantic.modes.Dark.Color.Text.OnBrand}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--text-on-brand"
+            },
+            "text-on-secondary": { 
+              "$value": "{Semantic.modes.Dark.Color.Text.OnSecondary}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--text-on-secondary"
+            },
+            "success": { 
+              "$value": "{Semantic.modes.Dark.Color.Status.Success}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--success"
+            },
+            "warning": { 
+              "$value": "{Semantic.modes.Dark.Color.Status.Warning}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--warning"
+            },
+            "error": { 
+              "$value": "{Semantic.modes.Dark.Color.Status.Error}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--error"
+            },
+            "info": { 
+              "$value": "{Semantic.modes.Dark.Color.Status.Info}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--info"
+            },
+            "base": { 
+              "$value": "{Semantic.modes.Dark.Color.Base}", 
+              "$type": "color",
+              "$wpVariable": "--wp--preset--color--base"
+            }
+          }
+        },
+        "Custom": {
+          "Button": {
+            "background": { 
+              "$value": "{Semantic.modes.Dark.Color.Brand.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--custom--button--background"
+            },
+            "background-hover": { 
+              "$value": "{Semantic.modes.Dark.Color.Brand.Hover}", 
+              "$type": "color",
+              "$wpVariable": "--wp--custom--button--background-hover"
+            },
+            "text": { 
+              "$value": "{Semantic.modes.Dark.Color.Text.OnBrand}", 
+              "$type": "color",
+              "$wpVariable": "--wp--custom--button--text"
+            },
+            "border-radius": { 
+              "$value": "{Semantic.modes.Dark.Radius.Button}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--button--border-radius"
+            },
+            "spacing-horizontal": { 
+              "$value": "{Primitives.modes.Default.Spacing.5}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--button--spacing--horizontal"
+            },
+            "spacing-vertical": { 
+              "$value": "{Primitives.modes.Default.Spacing.2-5}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--button--spacing--vertical"
+            }
+          },
+          "Card": {
+            "border-radius": { 
+              "$value": "{Semantic.modes.Dark.Radius.Card}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--card--border-radius"
+            },
+            "spacing": { 
+              "$value": "{Primitives.modes.Default.Spacing.6}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--card--spacing"
+            }
+          },
+          "Input": {
+            "background": { 
+              "$value": "{Semantic.modes.Dark.Color.Surface}", 
+              "$type": "color",
+              "$wpVariable": "--wp--custom--input--background"
+            },
+            "border": { 
+              "$value": "{Semantic.modes.Dark.Color.Border.Default}", 
+              "$type": "color",
+              "$wpVariable": "--wp--custom--input--border"
+            },
+            "border-radius": { 
+              "$value": "{Semantic.modes.Dark.Radius.Input}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--input--border-radius"
+            },
+            "spacing-horizontal": { 
+              "$value": "{Primitives.modes.Default.Spacing.3}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--input--spacing--horizontal"
+            },
+            "spacing-vertical": { 
+              "$value": "{Primitives.modes.Default.Spacing.2}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--input--spacing--vertical"
+            }
+          },
+          "Badge": {
+            "border-radius": { 
+              "$value": "{Semantic.modes.Dark.Radius.Badge}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--badge--border-radius"
+            }
+          },
+          "Modal": {
+            "border-radius": { 
+              "$value": "{Semantic.modes.Dark.Radius.Modal}", 
+              "$type": "number",
+              "$wpVariable": "--wp--custom--modal--border-radius"
+            }
+          }
+        },
+        "Style": {
+          "Global": {
+            "content-size": { 
+              "$value": "{Semantic.modes.Dark.Layout.ContentWidth}", 
+              "$type": "number",
+              "$wpVariable": "--wp--style--global--content-size"
+            },
+            "wide-size": { 
+              "$value": "{Semantic.modes.Dark.Layout.WideWidth}", 
+              "$type": "number",
+              "$wpVariable": "--wp--style--global--wide-size"
+            }
+          }
+        }
+      }
+    }
+  }
+}

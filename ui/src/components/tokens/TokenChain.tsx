@@ -54,7 +54,7 @@ export function TokenChain({ chain, size = 'md' }: TokenChainProps) {
                 borderRadius: 'var(--radius-lg)',
               }}
             >
-              <Icon size={iconSize} style={{ color: config.color }} />
+              <Icon size={iconSize} color={config.color} />
               <span
                 style={{
                   fontSize,
@@ -68,7 +68,7 @@ export function TokenChain({ chain, size = 'md' }: TokenChainProps) {
             </div>
             
             {index < chain.length - 1 && (
-              <ArrowRight size={arrowSize} style={{ color: 'var(--color-muted)' }} />
+              <ArrowRight size={arrowSize} color="var(--color-muted)" />
             )}
           </div>
         );

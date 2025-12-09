@@ -18,7 +18,7 @@ import {
 interface FeatureCardProps {
   title: string;
   description: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: React.ComponentType<{ className?: string; color?: string }>;
   href: string;
   color: string;
   bgColor: string;
@@ -45,7 +45,7 @@ function FeatureCard({ title, description, icon: Icon, href, color, bgColor }: F
         className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4"
         style={{ backgroundColor: bgColor }}
       >
-        <Icon className="w-7 h-7" style={{ color }} />
+        <Icon className="w-7 h-7" color={color} />
       </div>
       <h3 
         className="font-semibold mb-2"
@@ -81,7 +81,7 @@ function FeatureCard({ title, description, icon: Icon, href, color, bgColor }: F
   );
 }
 
-function StatCard({ value, label, icon: Icon }: { value: string; label: string; icon: React.ComponentType<{ className?: string }> }) {
+function StatCard({ value, label, icon: Icon }: { value: string; label: string; icon: React.ComponentType<{ className?: string; color?: string }> }) {
   return (
     <div 
       className="flex items-center gap-4"
@@ -97,7 +97,7 @@ function StatCard({ value, label, icon: Icon }: { value: string; label: string; 
         className="w-12 h-12 rounded-xl flex items-center justify-center"
         style={{ backgroundColor: 'rgba(42, 175, 184, 0.1)' }}
       >
-        <Icon className="w-6 h-6" style={{ color: 'var(--color-brand)' }} />
+        <Icon className="w-6 h-6" color="var(--color-brand)" />
       </div>
       <div>
         <p 
@@ -215,7 +215,7 @@ export default function Home() {
                 borderLeft: `3px solid ${layer.color}`,
               }}
             >
-              <layer.icon style={{ color: layer.color, width: 18, height: 18 }} />
+              <layer.icon color={layer.color} size={18} />
               <div style={{ flex: 1 }}>
                 <span style={{ fontWeight: 600, color: 'var(--color-foreground)', fontSize: 'var(--font-size-body-small)' }}>
                   {layer.name}

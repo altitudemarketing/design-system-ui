@@ -1,0 +1,383 @@
+/**
+ * Altitude Design System - Greenshift CSS Variables
+ * 
+ * WordPress/Greenshift compatible CSS custom properties
+ * Based on the Altitude Design System token architecture
+ * 
+ * Structure:
+ * - Root (Light Mode) - Default WordPress preset and custom variables
+ * - Dark Mode - Dark theme overrides
+ * 
+ * Usage:
+ * 1. Add this to your theme's custom CSS or enqueue as a stylesheet
+ * 2. Customize color values as needed for your brand
+ * 3. Dark mode activates with [data-theme="dark"] on <html> or <body>
+ */
+
+/* ============================================================================
+   LIGHT MODE (Default)
+   ========================================================================= */
+
+:root {
+  
+  /* --------------------------------------------------------------------------
+     WordPress Preset Colors
+     Used in: Block editor color picker, Greenshift color controls
+     -------------------------------------------------------------------------- */
+  
+  /* Brand Colors */
+  --wp--preset--color--brand: #34d399;           /* Emerald 400 */
+  --wp--preset--color--brand-hover: #10b981;     /* Emerald 500 */
+  --wp--preset--color--brand-light: #d1fae5;     /* Emerald 100 */
+  --wp--preset--color--brand-dark: #047857;      /* Emerald 700 */
+  
+  /* Secondary Colors */
+  --wp--preset--color--secondary: #312e81;       /* Violet 900 */
+  --wp--preset--color--secondary-hover: #1e1b4b; /* Violet 950 */
+  --wp--preset--color--secondary-light: #e0e7ff; /* Violet 100 */
+  
+  /* Background & Surface */
+  --wp--preset--color--background: #f9fafb;      /* Gray 50 */
+  --wp--preset--color--background-alt: #f3f4f6;  /* Gray 100 */
+  --wp--preset--color--surface: #ffffff;         /* White */
+  
+  /* Card */
+  --wp--preset--color--card-base: #ffffff;       /* White */
+  --wp--preset--color--card-border: #e5e7eb;     /* Gray 200 */
+  --wp--preset--color--card-text: #111827;       /* Gray 900 */
+  
+  /* Text Colors */
+  --wp--preset--color--muted: #6b7280;           /* Gray 500 */
+  --wp--preset--color--subtle: #9ca3af;          /* Gray 400 */
+  --wp--preset--color--text-on-brand: #ffffff;   /* White */
+  --wp--preset--color--text-on-secondary: #ffffff; /* White */
+  
+  /* Border */
+  --wp--preset--color--border: #e5e7eb;          /* Gray 200 */
+  --wp--preset--color--border-strong: #d1d5db;   /* Gray 300 */
+  
+  /* Status Colors */
+  --wp--preset--color--success: #22c55e;         /* Green 500 */
+  --wp--preset--color--warning: #f59e0b;         /* Amber 500 */
+  --wp--preset--color--error: #ef4444;           /* Red 500 */
+  --wp--preset--color--info: #3b82f6;            /* Blue 500 */
+  
+  /* Base */
+  --wp--preset--color--base: #020617;            /* Slate 950 */
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Button
+     Used in: Button blocks, custom button components
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--button--background: #34d399;
+  --wp--custom--button--background-hover: #10b981;
+  --wp--custom--button--text: #ffffff;
+  --wp--custom--button--border-radius: 6px;      /* Primitives.Radius.lg */
+  --wp--custom--button--spacing--horizontal: 20px; /* Primitives.Spacing.5 */
+  --wp--custom--button--spacing--vertical: 10px;   /* Primitives.Spacing.2-5 */
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Card
+     Used in: Card blocks, custom card components
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--card--border-radius: 8px;        /* Primitives.Radius.xl */
+  --wp--custom--card--spacing: 24px;             /* Primitives.Spacing.6 */
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Input
+     Used in: Form inputs, search fields
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--input--background: #ffffff;
+  --wp--custom--input--border: #e5e7eb;
+  --wp--custom--input--border-radius: 4px;       /* Primitives.Radius.md */
+  --wp--custom--input--spacing--horizontal: 12px; /* Primitives.Spacing.3 */
+  --wp--custom--input--spacing--vertical: 8px;    /* Primitives.Spacing.2 */
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Badge
+     Used in: Badge/pill components
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--badge--border-radius: 9999px;    /* Primitives.Radius.full */
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Modal
+     Used in: Modal/dialog components
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--modal--border-radius: 12px;      /* Primitives.Radius.2xl */
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Style Global
+     Used in: Content width constraints, layout
+     -------------------------------------------------------------------------- */
+  
+  --wp--style--global--content-size: 1024px;     /* Primitives.Layout.5xl */
+  --wp--style--global--wide-size: 1440px;        /* Semantic.Layout.WideWidth */
+}
+
+
+/* ============================================================================
+   DARK MODE
+   Activate with: <html data-theme="dark"> or <body data-theme="dark">
+   Alternative selectors: .dark-mode, [data-theme="dark"], 
+                          @media (prefers-color-scheme: dark)
+   ========================================================================= */
+
+[data-theme="dark"] {
+  
+  /* --------------------------------------------------------------------------
+     WordPress Preset Colors - Dark Mode Overrides
+     -------------------------------------------------------------------------- */
+  
+  /* Brand Colors */
+  --wp--preset--color--brand: #34d399;           /* Emerald 400 */
+  --wp--preset--color--brand-hover: #6ee7b7;     /* Emerald 300 */
+  --wp--preset--color--brand-light: #064e3b;     /* Emerald 900 */
+  --wp--preset--color--brand-dark: #a7f3d0;      /* Emerald 200 */
+  
+  /* Secondary Colors */
+  --wp--preset--color--secondary: #a78bfa;       /* Violet 400 */
+  --wp--preset--color--secondary-hover: #c4b5fd; /* Violet 300 */
+  --wp--preset--color--secondary-light: #4c1d95; /* Violet 900 */
+  
+  /* Background & Surface */
+  --wp--preset--color--background: #030712;      /* Gray 950 */
+  --wp--preset--color--background-alt: #111827;  /* Gray 900 */
+  --wp--preset--color--surface: #1f2937;         /* Gray 800 */
+  
+  /* Card */
+  --wp--preset--color--card-base: #1f2937;       /* Gray 800 */
+  --wp--preset--color--card-border: #374151;     /* Gray 700 */
+  --wp--preset--color--card-text: #f9fafb;       /* Gray 50 */
+  
+  /* Text Colors */
+  --wp--preset--color--muted: #9ca3af;           /* Gray 400 */
+  --wp--preset--color--subtle: #6b7280;          /* Gray 500 */
+  --wp--preset--color--text-on-brand: #030712;   /* Gray 950 */
+  --wp--preset--color--text-on-secondary: #ffffff; /* White */
+  
+  /* Border */
+  --wp--preset--color--border: #374151;          /* Gray 700 */
+  --wp--preset--color--border-strong: #4b5563;   /* Gray 600 */
+  
+  /* Status Colors */
+  --wp--preset--color--success: #4ade80;         /* Green 400 */
+  --wp--preset--color--warning: #fbbf24;         /* Amber 400 */
+  --wp--preset--color--error: #f87171;           /* Red 400 */
+  --wp--preset--color--info: #60a5fa;            /* Blue 400 */
+  
+  /* Base */
+  --wp--preset--color--base: #ffffff;            /* White */
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Button (Dark Mode)
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--button--background: #34d399;
+  --wp--custom--button--background-hover: #6ee7b7;
+  --wp--custom--button--text: #030712;
+  /* Border radius and spacing remain the same */
+  
+  
+  /* --------------------------------------------------------------------------
+     WordPress Custom Properties - Input (Dark Mode)
+     -------------------------------------------------------------------------- */
+  
+  --wp--custom--input--background: #1f2937;
+  --wp--custom--input--border: #374151;
+  /* Border radius and spacing remain the same */
+  
+  /* Card, Badge, Modal, and Global styles remain the same in dark mode */
+}
+
+
+/* ============================================================================
+   ALTERNATIVE DARK MODE ACTIVATION
+   Uncomment the selector pattern you prefer:
+   ========================================================================= */
+
+/* Option 1: Class-based (manual toggle) */
+/*
+.dark-mode {
+  // Copy dark mode variables here
+}
+*/
+
+/* Option 2: System preference (automatic) */
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    // Copy dark mode variables here
+  }
+}
+*/
+
+/* Option 3: Combined approach (respect system + allow override) */
+/*
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    // Copy dark mode variables here
+  }
+}
+
+[data-theme="dark"] {
+  // Copy dark mode variables here
+}
+*/
+
+
+/* ============================================================================
+   UTILITY CLASSES (Optional)
+   Helper classes using the design system variables
+   ========================================================================= */
+
+/* Brand Backgrounds */
+.bg-brand { background-color: var(--wp--preset--color--brand); }
+.bg-brand-light { background-color: var(--wp--preset--color--brand-light); }
+.bg-surface { background-color: var(--wp--preset--color--surface); }
+
+/* Text Colors */
+.text-muted { color: var(--wp--preset--color--muted); }
+.text-subtle { color: var(--wp--preset--color--subtle); }
+.text-on-brand { color: var(--wp--preset--color--text-on-brand); }
+
+/* Status Colors */
+.text-success { color: var(--wp--preset--color--success); }
+.text-warning { color: var(--wp--preset--color--warning); }
+.text-error { color: var(--wp--preset--color--error); }
+.text-info { color: var(--wp--preset--color--info); }
+
+/* Borders */
+.border-default { border-color: var(--wp--preset--color--border); }
+.border-strong { border-color: var(--wp--preset--color--border-strong); }
+
+/* Border Radius */
+.rounded-button { border-radius: var(--wp--custom--button--border-radius); }
+.rounded-card { border-radius: var(--wp--custom--card--border-radius); }
+.rounded-input { border-radius: var(--wp--custom--input--border-radius); }
+.rounded-badge { border-radius: var(--wp--custom--badge--border-radius); }
+
+/* Spacing */
+.p-card { padding: var(--wp--custom--card--spacing); }
+.px-button { padding-left: var(--wp--custom--button--spacing--horizontal); padding-right: var(--wp--custom--button--spacing--horizontal); }
+.py-button { padding-top: var(--wp--custom--button--spacing--vertical); padding-bottom: var(--wp--custom--button--spacing--vertical); }
+
+
+/* ============================================================================
+   GREENSHIFT COMPONENT EXAMPLES
+   Example implementations using the variables
+   ========================================================================= */
+
+/* Custom Button Styling */
+.custom-button {
+  background-color: var(--wp--custom--button--background);
+  color: var(--wp--custom--button--text);
+  border-radius: var(--wp--custom--button--border-radius);
+  padding: var(--wp--custom--button--spacing--vertical) var(--wp--custom--button--spacing--horizontal);
+  border: none;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.custom-button:hover {
+  background-color: var(--wp--custom--button--background-hover);
+}
+
+/* Custom Card Styling */
+.custom-card {
+  background-color: var(--wp--preset--color--card-base);
+  border: 1px solid var(--wp--preset--color--card-border);
+  border-radius: var(--wp--custom--card--border-radius);
+  padding: var(--wp--custom--card--spacing);
+  color: var(--wp--preset--color--card-text);
+}
+
+/* Custom Input Styling */
+.custom-input {
+  background-color: var(--wp--custom--input--background);
+  border: 1px solid var(--wp--custom--input--border);
+  border-radius: var(--wp--custom--input--border-radius);
+  padding: var(--wp--custom--input--spacing--vertical) var(--wp--custom--input--spacing--horizontal);
+  color: var(--wp--preset--color--card-text);
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.custom-input:focus {
+  border-color: var(--wp--preset--color--brand);
+}
+
+/* Custom Badge Styling */
+.custom-badge {
+  background-color: var(--wp--preset--color--brand-light);
+  color: var(--wp--preset--color--brand-dark);
+  border-radius: var(--wp--custom--badge--border-radius);
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Layout Container */
+.content-container {
+  max-width: var(--wp--style--global--content-size);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.wide-container {
+  max-width: var(--wp--style--global--wide-size);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/* ============================================================================
+   CUSTOMIZATION NOTES
+   ========================================================================= */
+
+/**
+ * BRAND CUSTOMIZATION:
+ * To customize for your brand, replace these key variables:
+ * 
+ * Light Mode:
+ * --wp--preset--color--brand: YOUR_PRIMARY_COLOR
+ * --wp--preset--color--brand-hover: YOUR_PRIMARY_COLOR_DARKER
+ * --wp--preset--color--secondary: YOUR_SECONDARY_COLOR
+ * 
+ * Dark Mode:
+ * [data-theme="dark"] {
+ *   --wp--preset--color--brand: YOUR_PRIMARY_COLOR_LIGHTER
+ *   --wp--preset--color--brand-hover: YOUR_PRIMARY_COLOR_EVEN_LIGHTER
+ * }
+ * 
+ * SPACING CUSTOMIZATION:
+ * Adjust spacing variables to match your design:
+ * --wp--custom--button--spacing--horizontal: 24px;
+ * --wp--custom--card--spacing: 32px;
+ * 
+ * BORDER RADIUS CUSTOMIZATION:
+ * Control roundness across components:
+ * --wp--custom--button--border-radius: 8px;  /* More rounded */
+ * --wp--custom--card--border-radius: 16px;   /* Even more rounded */
+ * 
+ * LAYOUT CUSTOMIZATION:
+ * Adjust content widths:
+ * --wp--style--global--content-size: 960px;  /* Narrower content */
+ * --wp--style--global--wide-size: 1280px;    /* Narrower wide sections */
+ */

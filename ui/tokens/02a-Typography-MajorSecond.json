@@ -1,0 +1,36 @@
+{
+  "Typography - Major Second": {
+    "modes": {
+      "Mobile": {
+        "FontSize": {
+          "2xs": { "$value": 10, "$type": "number" },
+          "xs": { "$value": 12, "$type": "number" },
+          "sm": { "$value": 14, "$type": "number" },
+          "md": { "$value": 16, "$type": "number" },
+          "lg": { "$value": 18, "$type": "number" },
+          "xl": { "$value": 20, "$type": "number" },
+          "2xl": { "$value": 24, "$type": "number" },
+          "3xl": { "$value": 28, "$type": "number" },
+          "4xl": { "$value": 32, "$type": "number" },
+          "5xl": { "$value": 36, "$type": "number" },
+          "6xl": { "$value": 40, "$type": "number" }
+        }
+      },
+      "Desktop": {
+        "FontSize": {
+          "2xs": { "$value": 12, "$type": "number" },
+          "xs": { "$value": 14, "$type": "number" },
+          "sm": { "$value": 16, "$type": "number" },
+          "md": { "$value": 18, "$type": "number" },
+          "lg": { "$value": 20, "$type": "number" },
+          "xl": { "$value": 24, "$type": "number" },
+          "2xl": { "$value": 28, "$type": "number" },
+          "3xl": { "$value": 32, "$type": "number" },
+          "4xl": { "$value": 36, "$type": "number" },
+          "5xl": { "$value": 40, "$type": "number" },
+          "6xl": { "$value": 48, "$type": "number" }
+        }
+      }
+    }
+  }
+}
