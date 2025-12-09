@@ -280,8 +280,15 @@ interface Token {
 *   When deploying to Vercel, if the Next.js app is in a subdirectory (e.g., `ui`), configure Vercel as follows:
     *   **Option 1: Set Root Directory (Recommended):**
         *   **Root Directory:** `ui`
-        *   **Build Command:** `bun run build` (or leave as default)
-        *   **Output Directory:** `.next` (default)
+        *   Update `ui/vercel.json` to the following:
+            ```json
+            {
+              "buildCommand": "cp -r ../tokens . && bun run build"
+            }
+            ```
+        *   Ensure the root `package.json` does not include `next` as a dependency.
+        *   Go to your project → **Settings** → **General** in the Vercel Dashboard.
+        *   Set the **Root Directory** to `ui`.
     *   **Option 2: Custom Build Command:**
         *   **Root Directory:** `.` (empty/default)
         *   **Build Command:** `cd ui && bun run build`
@@ -314,22 +321,6 @@ interface Token {
         npx vercel --yes
         ```
         This will deploy directly and create a new project without needing the GitHub import flow.
-*   **Vercel Build Configuration:** When deploying to Vercel, the Next.js app is in the `ui` subdirectory. Ensure the correct settings are used:
-    *   **Option 1: Set Root Directory (Recommended):**
-        *   **Root Directory:** `ui`
-        *   Update `ui/vercel.json` to the following:
-            ```json
-            {
-              "buildCommand": "cp -r ../tokens . && bun run build"
-            }
-            ```
-        *   Ensure the root `package.json` does not include `next` as a dependency.
-        *   Go to your project → **Settings** → **General** in the Vercel Dashboard.
-        *   Set the **Root Directory** to `ui`.
-    *   **Option 2: Custom Build Command:**
-        *   **Root Directory:** `.` (empty/default)
-        *   **Build Command:** `cd ui && bun run build`
-        *   **Output Directory:** `ui/.next`
 
 ## TODO LIST
 
