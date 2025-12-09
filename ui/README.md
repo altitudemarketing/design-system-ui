@@ -30,7 +30,7 @@ This Next.js application provides comprehensive documentation for Altitude's 5-l
 ## Project Structure
 
 ```
-design-system-ui/
+ui/
 ├── src/
 │   ├── app/
 │   │   ├── (main)/              # Main documentation pages
@@ -64,19 +64,18 @@ design-system-ui/
 
 ### Prerequisites
 
-- Node.js 18+
-- npm or yarn
+- Node.js 18+ or Bun 1.0+
 
 ### Installation
 
 ```bash
-npm install
+bun install
 ```
 
 ### Development
 
 ```bash
-npm run dev
+bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the application.

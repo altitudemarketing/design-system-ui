@@ -11,6 +11,7 @@ globs: *
 
 *   The AI coding assistant can now use Node.js version v22.17.1 for project development.
 *   The AI coding assistant can now use the following libraries: next, react, react-dom, tailwindcss, postcss, autoprefixer and lucide-react.
+*   The AI coding assistant can now use Bun v1.2.19 as a package manager.
 
 ## PROJECT DOCUMENTATION & CONTEXT SYSTEM
 
@@ -173,6 +174,16 @@ interface Token {
 *   **Correct GitHub Commits:** Ensure all local files and previous commits are associated with the `altitudemarketing` GitHub organization under the correct user account.
 *   **Project Setup:** Update the `@README.md` file with the current project overview and structure.
 *   **Git Ignore:** Add the `old design systems` folder to the `.gitignore` file.
+*   **Package Manager:** Use Bun for package management.
+*   **Vercel Build Configuration:** When deploying to Vercel, if the Next.js app is in a subdirectory (e.g., `app`), configure Vercel as follows:
+    *   **Option 1: Set Root Directory (Recommended):**
+        *   **Root Directory:** `app`
+        *   **Build Command:** `bun run build` (or leave as default)
+        *   **Output Directory:** `.next` (default)
+    *   **Option 2: Custom Build Command:**
+        *   **Root Directory:** `.` (empty/default)
+        *   **Build Command:** `cd app && bun run build`
+        *   **Output Directory:** `app/.next`
 
 ## CODING STANDARDS
 
@@ -272,7 +283,15 @@ interface Token {
 
 ## DEPLOYMENT
 
-(No existing deployment rules)
+*   When deploying to Vercel, if the Next.js app is in a subdirectory (e.g., `app`), configure Vercel as follows:
+    *   **Option 1: Set Root Directory (Recommended):**
+        *   **Root Directory:** `app`
+        *   **Build Command:** `bun run build` (or leave as default)
+        *   **Output Directory:** `.next` (default)
+    *   **Option 2: Custom Build Command:**
+        *   **Root Directory:** `.` (empty/default)
+        *   **Build Command:** `cd app && bun run build`
+        *   **Output Directory:** `app/.next`
 
 ## TODO LIST
 
@@ -541,23 +560,4 @@ Here is a high-fidelity mockup using HTML and Tailwind classes to demonstrate th
         :root {
             --radius-preview: 0.5rem;
             --font-preview: sans-serif;
-            --color-brand-preview: #10b981; /* Default Emerald-500 */
-            --color-brand-contrast: #ffffff;
-            --color-bg-preview: #f8fafc;
-            --color-surface-preview: #ffffff;
-            --color-text-preview: #0f172a;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-900 h-screen flex flex-col overflow-hidden font-sans">
-
-    <!-- Header -->
-    <header class="bg-white border-b border-gray-200 h-16 flex items-center justify-between px-6 shrink-0 z-10">
-        <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white font-bold">DS</div>
-            <h1 class="font-semibold text-lg text-gray-900">Theme Generator</h1>
-            <span class="bg-gray-100 text-gray-500 text-xs px-2 py-0.5 rounded-full">Beta</span>
-        </div>
-        <div class="flex items-center gap-3">
-            <button class="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-1.5">Reset</button>
-            <button class="bg-black text-white text-sm font-medium px-4 py-2 rounded
+            --color-brand-preview: #10b981; /* Default Emerald-50
