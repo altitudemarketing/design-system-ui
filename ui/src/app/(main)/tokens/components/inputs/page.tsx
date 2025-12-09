@@ -84,11 +84,11 @@ export default function InputsPage() {
       <div style={{ marginBottom: 'var(--spacing-8)' }}>
         {/* Breadcrumb */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-2)', marginBottom: 'var(--spacing-4)' }}>
-          <Link href="/" style={{ fontSize: 'var(--font-size-label)', color: 'var(--color-muted)', textDecoration: 'none' }}>
-            Home
+          <Link href="/tokens" style={{ fontSize: 'var(--font-size-label)', color: 'var(--color-muted)', textDecoration: 'none' }}>
+            Tokens
           </Link>
           <ChevronRight size={14} style={{ color: 'var(--color-muted)' }} />
-          <Link href="/components" style={{ fontSize: 'var(--font-size-label)', color: 'var(--color-muted)', textDecoration: 'none' }}>
+          <Link href="/tokens/components" style={{ fontSize: 'var(--font-size-label)', color: 'var(--color-muted)', textDecoration: 'none' }}>
             Components
           </Link>
           <ChevronRight size={14} style={{ color: 'var(--color-muted)' }} />
@@ -126,7 +126,7 @@ export default function InputsPage() {
                 lineHeight: 'var(--line-height-tight)',
               }}
             >
-              Inputs
+              Input Tokens
             </h1>
             <p 
               style={{ 
@@ -497,4 +497,3 @@ export default function InputsPage() {
     </div>
   );
 }
-
