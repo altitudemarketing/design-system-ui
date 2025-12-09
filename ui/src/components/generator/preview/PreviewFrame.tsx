@@ -27,6 +27,8 @@ export function PreviewFrame() {
       accentFamily: state.accentColor.family,
       accentShade: state.accentColor.shade,
       neutralFamily: state.neutralScale,
+      headingTextShade: state.headingTextShade,
+      bodyTextShade: state.bodyTextShade,
     };
     
     injectThemeVariables({
@@ -41,6 +43,8 @@ export function PreviewFrame() {
     state.secondaryColor,
     state.accentColor,
     state.neutralScale,
+    state.headingTextShade,
+    state.bodyTextShade,
     state.radiusValues,
     state.typeScale,
     state.baseFontSize,

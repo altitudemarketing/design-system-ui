@@ -72,14 +72,20 @@ export function MockupWebsite({ onElementClick }: MockupWebsiteProps) {
             onClick={(e) => { e.preventDefault(); handleClick('nav-link'); }}
           >Pricing</a>
           <button 
-            className="px-4 py-2 text-sm font-medium text-white cursor-pointer hover:opacity-90 transition-opacity"
+            className="px-4 py-2 text-sm font-medium cursor-pointer hover:opacity-90 transition-opacity"
             style={{ 
               backgroundColor: 'var(--color-brand)',
               borderRadius: 'var(--radius-button, 6px)',
+              color: 'white',
             }}
             onClick={() => handleClick('button-primary')}
           >
-            Get Started
+            <span 
+              className="cursor-pointer"
+              onClick={(e) => { e.stopPropagation(); handleClick('button-text'); }}
+            >
+              Get Started
+            </span>
           </button>
         </div>
       </nav>
@@ -102,27 +108,30 @@ export function MockupWebsite({ onElementClick }: MockupWebsiteProps) {
         <h1 
           className="text-4xl font-bold mb-4 cursor-pointer hover:opacity-80"
           style={{ color: 'var(--color-foreground)' }}
-          onClick={() => handleClick('text-heading')}
+          onClick={() => handleClick('hero-title')}
         >
           Build something amazing
         </h1>
         <p 
           className="text-lg mb-8 max-w-xl mx-auto cursor-pointer hover:opacity-80"
           style={{ color: 'var(--color-muted)' }}
-          onClick={() => handleClick('text-muted')}
+          onClick={() => handleClick('hero-subtitle')}
         >
           Create beautiful, responsive websites with our design system powered by carefully crafted tokens.
         </p>
         <div className="flex items-center justify-center gap-4">
           <button 
-            className="px-6 py-3 text-sm font-medium text-white cursor-pointer hover:opacity-90 transition-opacity"
+            className="px-6 py-3 text-sm font-medium cursor-pointer hover:opacity-90 transition-opacity"
             style={{ 
               backgroundColor: 'var(--color-brand)',
               borderRadius: 'var(--radius-button, 6px)',
+              color: 'white',
             }}
             onClick={() => handleClick('button-primary')}
           >
-            Start Free Trial
+            <span onClick={(e) => { e.stopPropagation(); handleClick('button-text'); }}>
+              Start Free Trial
+            </span>
           </button>
           <button 
             className="px-6 py-3 text-sm font-medium border-2 bg-transparent cursor-pointer hover:opacity-80 transition-opacity"
@@ -157,7 +166,10 @@ export function MockupWebsite({ onElementClick }: MockupWebsiteProps) {
             iconBg="var(--color-accent-light)"
             title="Lightning Fast"
             description="Optimized for performance with lazy loading and efficient caching."
-            onClick={() => handleClick('card')}
+            onCardClick={() => handleClick('card')}
+            onIconClick={() => handleClick('card-icon')}
+            onTitleClick={() => handleClick('card-title')}
+            onDescriptionClick={() => handleClick('card-description')}
           />
           
           {/* Card 2 */}
@@ -166,7 +178,10 @@ export function MockupWebsite({ onElementClick }: MockupWebsiteProps) {
             iconBg="var(--color-accent-light)"
             title="Secure"
             description="Enterprise-grade security with end-to-end encryption."
-            onClick={() => handleClick('card')}
+            onCardClick={() => handleClick('card')}
+            onIconClick={() => handleClick('card-icon')}
+            onTitleClick={() => handleClick('card-title')}
+            onDescriptionClick={() => handleClick('card-description')}
           />
           
           {/* Card 3 */}
@@ -175,7 +190,10 @@ export function MockupWebsite({ onElementClick }: MockupWebsiteProps) {
             iconBg="var(--color-accent-light)"
             title="Flexible"
             description="Customize everything to match your brand identity."
-            onClick={() => handleClick('card')}
+            onCardClick={() => handleClick('card')}
+            onIconClick={() => handleClick('card-icon')}
+            onTitleClick={() => handleClick('card-title')}
+            onDescriptionClick={() => handleClick('card-description')}
           />
         </div>
       </section>
@@ -197,29 +215,41 @@ export function MockupWebsite({ onElementClick }: MockupWebsiteProps) {
             <FormField 
               label="Name" 
               placeholder="John Doe"
-              onClick={() => handleClick('input')}
+              onInputClick={() => handleClick('input')}
+              onLabelClick={() => handleClick('form-label')}
+              onPlaceholderClick={() => handleClick('input-placeholder')}
             />
             <FormField 
               label="Email" 
               placeholder="john@example.com"
               type="email"
-              onClick={() => handleClick('input')}
+              onInputClick={() => handleClick('input')}
+              onLabelClick={() => handleClick('form-label')}
+              onPlaceholderClick={() => handleClick('input-placeholder')}
             />
             <FormField 
               label="Message" 
               placeholder="Your message..."
               isTextarea
-              onClick={() => handleClick('input')}
+              onInputClick={() => handleClick('input')}
+              onLabelClick={() => handleClick('form-label')}
+              onPlaceholderClick={() => handleClick('input-placeholder')}
             />
             <button 
-              className="w-full px-4 py-2.5 text-sm font-medium text-white cursor-pointer hover:opacity-90 transition-opacity"
+              className="w-full px-4 py-2.5 text-sm font-medium cursor-pointer hover:opacity-90 transition-opacity"
               style={{ 
                 backgroundColor: 'var(--color-brand)',
                 borderRadius: 'var(--radius-button, 6px)',
+                color: 'white',
               }}
               onClick={() => handleClick('button-primary')}
             >
-              Send Message
+              <span 
+                className="cursor-pointer"
+                onClick={(e) => { e.stopPropagation(); handleClick('button-text'); }}
+              >
+                Send Message
+              </span>
             </button>
           </div>
         </div>
@@ -227,22 +257,24 @@ export function MockupWebsite({ onElementClick }: MockupWebsiteProps) {
       
       {/* Footer */}
       <footer 
-        className="px-8 py-8 border-t"
+        className="px-8 py-8 border-t cursor-pointer"
         style={{ 
           borderColor: 'var(--color-border)',
           backgroundColor: 'var(--color-background)',
         }}
+        onClick={() => handleClick('footer-text')}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div 
-              className="w-6 h-6 rounded"
+              className="w-6 h-6 rounded cursor-pointer hover:opacity-80"
               style={{ backgroundColor: 'var(--color-brand)' }}
+              onClick={(e) => { e.stopPropagation(); handleClick('logo'); }}
             />
             <span 
               className="text-sm cursor-pointer hover:opacity-80" 
               style={{ color: 'var(--color-muted)' }}
-              onClick={() => handleClick('text-muted')}
+              onClick={(e) => { e.stopPropagation(); handleClick('footer-text'); }}
             >
               © 2024 Acme Co. All rights reserved.
             </span>
@@ -252,19 +284,19 @@ export function MockupWebsite({ onElementClick }: MockupWebsiteProps) {
               href="#" 
               className="text-sm cursor-pointer hover:opacity-80" 
               style={{ color: 'var(--color-muted)' }}
-              onClick={(e) => { e.preventDefault(); handleClick('footer-link'); }}
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleClick('footer-link'); }}
             >Privacy</a>
             <a 
               href="#" 
               className="text-sm cursor-pointer hover:opacity-80" 
               style={{ color: 'var(--color-muted)' }}
-              onClick={(e) => { e.preventDefault(); handleClick('footer-link'); }}
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleClick('footer-link'); }}
             >Terms</a>
             <a 
               href="#" 
               className="text-sm cursor-pointer hover:opacity-80" 
               style={{ color: 'var(--color-muted)' }}
-              onClick={(e) => { e.preventDefault(); handleClick('footer-link'); }}
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleClick('footer-link'); }}
             >Contact</a>
           </div>
         </div>
@@ -278,10 +310,22 @@ interface FeatureCardProps {
   iconBg: string;
   title: string;
   description: string;
-  onClick: () => void;
+  onCardClick: () => void;
+  onIconClick: () => void;
+  onTitleClick: () => void;
+  onDescriptionClick: () => void;
 }
 
-function FeatureCard({ icon, iconBg, title, description, onClick }: FeatureCardProps) {
+function FeatureCard({ 
+  icon, 
+  iconBg, 
+  title, 
+  description, 
+  onCardClick,
+  onIconClick,
+  onTitleClick,
+  onDescriptionClick,
+}: FeatureCardProps) {
   return (
     <div 
       className="p-6 border cursor-pointer hover:shadow-md transition-shadow"
@@ -290,21 +334,27 @@ function FeatureCard({ icon, iconBg, title, description, onClick }: FeatureCardP
         borderColor: 'var(--color-border)',
         borderRadius: 'var(--radius-card, 8px)',
       }}
-      onClick={onClick}
+      onClick={onCardClick}
     >
       <div 
-        className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+        className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 cursor-pointer hover:opacity-80 transition-opacity"
         style={{ backgroundColor: iconBg }}
+        onClick={(e) => { e.stopPropagation(); onIconClick(); }}
       >
         {icon}
       </div>
       <h3 
-        className="font-semibold mb-2"
+        className="font-semibold mb-2 cursor-pointer hover:opacity-80 transition-opacity"
         style={{ color: 'var(--color-foreground)' }}
+        onClick={(e) => { e.stopPropagation(); onTitleClick(); }}
       >
         {title}
       </h3>
-      <p className="text-sm" style={{ color: 'var(--color-muted)' }}>
+      <p 
+        className="text-sm cursor-pointer hover:opacity-80 transition-opacity" 
+        style={{ color: 'var(--color-muted)' }}
+        onClick={(e) => { e.stopPropagation(); onDescriptionClick(); }}
+      >
         {description}
       </p>
     </div>
@@ -316,10 +366,20 @@ interface FormFieldProps {
   placeholder: string;
   type?: string;
   isTextarea?: boolean;
-  onClick: () => void;
+  onInputClick: () => void;
+  onLabelClick: () => void;
+  onPlaceholderClick: () => void;
 }
 
-function FormField({ label, placeholder, type = 'text', isTextarea, onClick }: FormFieldProps) {
+function FormField({ 
+  label, 
+  placeholder, 
+  type = 'text', 
+  isTextarea, 
+  onInputClick,
+  onLabelClick,
+  onPlaceholderClick,
+}: FormFieldProps) {
   const inputStyles = {
     backgroundColor: 'var(--color-surface)',
     borderColor: 'var(--color-border)',
@@ -328,10 +388,11 @@ function FormField({ label, placeholder, type = 'text', isTextarea, onClick }: F
   };
   
   return (
-    <div onClick={onClick}>
+    <div>
       <label 
-        className="block text-sm font-medium mb-1"
+        className="block text-sm font-medium mb-1 cursor-pointer hover:opacity-80"
         style={{ color: 'var(--color-foreground)' }}
+        onClick={onLabelClick}
       >
         {label}
       </label>
@@ -339,17 +400,21 @@ function FormField({ label, placeholder, type = 'text', isTextarea, onClick }: F
         <textarea 
           rows={3}
           placeholder={placeholder}
-          className="w-full px-3 py-2 border text-sm resize-none cursor-pointer"
+          className="w-full px-3 py-2 border text-sm resize-none cursor-pointer hover:border-gray-400 transition-colors"
           style={inputStyles}
           readOnly
+          onClick={onInputClick}
+          onFocus={onPlaceholderClick}
         />
       ) : (
         <input 
           type={type}
           placeholder={placeholder}
-          className="w-full px-3 py-2 border text-sm cursor-pointer"
+          className="w-full px-3 py-2 border text-sm cursor-pointer hover:border-gray-400 transition-colors"
           style={inputStyles}
           readOnly
+          onClick={onInputClick}
+          onFocus={onPlaceholderClick}
         />
       )}
     </div>

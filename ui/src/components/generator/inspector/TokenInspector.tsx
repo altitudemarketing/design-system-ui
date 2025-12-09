@@ -35,6 +35,20 @@ const ELEMENT_TOKEN_CHAINS: Record<string, ElementMetadata> = {
       { id: 'badge-brand', name: 'Badge Background (Brand)' },
     ],
   },
+  'button-text': {
+    displayName: 'Button Text',
+    propertyLabel: 'Text color',
+    colorSource: 'surface',
+    chain: [
+      { layer: 'component', label: 'Component', name: 'Button.Text.Primary' },
+      { layer: 'semantic', label: 'Semantic', name: 'Color.Surface', sublabel: 'Light mode' },
+      { layer: 'primitive', label: 'Primitive', name: 'Color.White' },
+    ],
+    affected: [
+      { id: 'icon-on-brand', name: 'Icons on Brand Background' },
+      { id: 'text-on-accent', name: 'Text on Accent' },
+    ],
+  },
   'button-outline': {
     displayName: 'Button Outline',
     propertyLabel: 'Border & text color',
@@ -92,6 +106,20 @@ const ELEMENT_TOKEN_CHAINS: Record<string, ElementMetadata> = {
       { id: 'subtitle', name: 'Subtitle Text' },
     ],
   },
+  'footer-text': {
+    displayName: 'Footer Text',
+    propertyLabel: 'Text color',
+    colorSource: 'muted',
+    chain: [
+      { layer: 'component', label: 'Component', name: 'Footer.Text' },
+      { layer: 'semantic', label: 'Semantic', name: 'Color.Text.Muted', sublabel: 'Light mode' },
+      { layer: 'primitive', label: 'Primitive', name: 'Color.Gray.500' },
+    ],
+    affected: [
+      { id: 'nav-link', name: 'Navigation Links' },
+      { id: 'caption', name: 'Caption Text' },
+    ],
+  },
   'text-muted': {
     displayName: 'Body Text',
     propertyLabel: 'Text color',
@@ -105,6 +133,36 @@ const ELEMENT_TOKEN_CHAINS: Record<string, ElementMetadata> = {
       { id: 'nav-link', name: 'Navigation Links' },
       { id: 'footer-text', name: 'Footer Text' },
       { id: 'description', name: 'Card Descriptions' },
+    ],
+  },
+  'hero-title': {
+    displayName: 'Hero Title',
+    propertyLabel: 'Text color',
+    colorSource: 'foreground',
+    chain: [
+      { layer: 'component', label: 'Component', name: 'Hero.Title' },
+      { layer: 'semantic', label: 'Semantic', name: 'Color.Foreground', sublabel: 'Light mode' },
+      { layer: 'primitive', label: 'Primitive', name: 'Color.Gray.900' },
+    ],
+    affected: [
+      { id: 'section-title', name: 'Section Titles' },
+      { id: 'card-title', name: 'Card Titles' },
+      { id: 'form-heading', name: 'Form Headings' },
+    ],
+  },
+  'hero-subtitle': {
+    displayName: 'Hero Subtitle',
+    propertyLabel: 'Text color',
+    colorSource: 'muted',
+    chain: [
+      { layer: 'component', label: 'Component', name: 'Hero.Subtitle' },
+      { layer: 'semantic', label: 'Semantic', name: 'Color.Text.Muted', sublabel: 'Light mode' },
+      { layer: 'primitive', label: 'Primitive', name: 'Color.Gray.500' },
+    ],
+    affected: [
+      { id: 'description', name: 'Descriptions' },
+      { id: 'body-text', name: 'Body Text' },
+      { id: 'card-description', name: 'Card Descriptions' },
     ],
   },
   'card': {
@@ -122,6 +180,50 @@ const ELEMENT_TOKEN_CHAINS: Record<string, ElementMetadata> = {
       { id: 'input-bg', name: 'Input Background' },
     ],
   },
+  'card-icon': {
+    displayName: 'Card Icon',
+    propertyLabel: 'Background color',
+    colorSource: 'accent-light',
+    chain: [
+      { layer: 'component', label: 'Component', name: 'Card.Icon.Background' },
+      { layer: 'semantic', label: 'Semantic', name: 'Color.Accent.Light', sublabel: 'Light mode' },
+      { layer: 'primitive', label: 'Primitive', name: 'Color.Emerald.100' },
+    ],
+    affected: [
+      { id: 'feature-icon', name: 'Feature Icons' },
+      { id: 'highlight-bg', name: 'Highlight Background' },
+    ],
+  },
+  'card-title': {
+    displayName: 'Card Title',
+    propertyLabel: 'Text color',
+    colorSource: 'foreground',
+    chain: [
+      { layer: 'component', label: 'Component', name: 'Card.Title' },
+      { layer: 'semantic', label: 'Semantic', name: 'Color.Foreground', sublabel: 'Light mode' },
+      { layer: 'primitive', label: 'Primitive', name: 'Color.Gray.900' },
+    ],
+    affected: [
+      { id: 'heading', name: 'Headings' },
+      { id: 'section-title', name: 'Section Titles' },
+      { id: 'form-label', name: 'Form Labels' },
+    ],
+  },
+  'card-description': {
+    displayName: 'Card Description',
+    propertyLabel: 'Text color',
+    colorSource: 'muted',
+    chain: [
+      { layer: 'component', label: 'Component', name: 'Card.Description' },
+      { layer: 'semantic', label: 'Semantic', name: 'Color.Text.Muted', sublabel: 'Light mode' },
+      { layer: 'primitive', label: 'Primitive', name: 'Color.Gray.500' },
+    ],
+    affected: [
+      { id: 'body-text', name: 'Body Text' },
+      { id: 'subtitle', name: 'Subtitles' },
+      { id: 'caption', name: 'Caption Text' },
+    ],
+  },
   'text-heading': {
     displayName: 'Heading',
     propertyLabel: 'Text color',
@@ -136,6 +238,20 @@ const ELEMENT_TOKEN_CHAINS: Record<string, ElementMetadata> = {
       { id: 'label', name: 'Form Labels' },
     ],
   },
+  'form-label': {
+    displayName: 'Form Label',
+    propertyLabel: 'Text color',
+    colorSource: 'foreground',
+    chain: [
+      { layer: 'component', label: 'Component', name: 'Form.Label' },
+      { layer: 'semantic', label: 'Semantic', name: 'Color.Foreground', sublabel: 'Light mode' },
+      { layer: 'primitive', label: 'Primitive', name: 'Color.Gray.900' },
+    ],
+    affected: [
+      { id: 'heading', name: 'Headings' },
+      { id: 'text-strong', name: 'Strong Text' },
+    ],
+  },
   'input': {
     displayName: 'Input Field',
     propertyLabel: 'Border color',
@@ -148,6 +264,20 @@ const ELEMENT_TOKEN_CHAINS: Record<string, ElementMetadata> = {
     affected: [
       { id: 'card-border', name: 'Card Border' },
       { id: 'divider', name: 'Dividers' },
+    ],
+  },
+  'input-placeholder': {
+    displayName: 'Input Placeholder',
+    propertyLabel: 'Text color',
+    colorSource: 'muted',
+    chain: [
+      { layer: 'component', label: 'Component', name: 'Input.Placeholder' },
+      { layer: 'semantic', label: 'Semantic', name: 'Color.Text.Muted', sublabel: 'Light mode' },
+      { layer: 'primitive', label: 'Primitive', name: 'Color.Gray.500' },
+    ],
+    affected: [
+      { id: 'caption', name: 'Caption Text' },
+      { id: 'hint-text', name: 'Hint Text' },
     ],
   },
   'logo': {
@@ -184,13 +314,13 @@ export function TokenInspector() {
     : ELEMENT_TOKEN_CHAINS['button-primary']; // Default to button
   
   // Color mapping based on neutral scale
-  const neutralColors: Record<string, string> = {
-    gray: { 50: '#f9fafb', 100: '#f3f4f6', 200: '#e5e7eb', 300: '#d1d5db', 400: '#9ca3af', 500: '#6b7280', 600: '#4b5563', 700: '#374151', 800: '#1f2937', 900: '#111827' },
-    slate: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a' },
-    zinc: { 50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8', 400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46', 800: '#27272a', 900: '#18181b' },
-    neutral: { 50: '#fafafa', 100: '#f5f5f5', 200: '#e5e5e5', 300: '#d4d4d4', 400: '#a3a3a3', 500: '#737373', 600: '#525252', 700: '#404040', 800: '#262626', 900: '#171717' },
-    stone: { 50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 300: '#d6d3d1', 400: '#a8a29e', 500: '#78716c', 600: '#57534e', 700: '#44403c', 800: '#292524', 900: '#1c1917' },
-  }[state.neutralScale] as Record<string, string>;
+  const neutralColors: Record<number, string> = {
+    gray: { 50: '#f9fafb', 100: '#f3f4f6', 200: '#e5e7eb', 300: '#d1d5db', 400: '#9ca3af', 500: '#6b7280', 600: '#4b5563', 700: '#374151', 800: '#1f2937', 900: '#111827', 950: '#030712' },
+    slate: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' },
+    zinc: { 50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8', 400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46', 800: '#27272a', 900: '#18181b', 950: '#09090b' },
+    neutral: { 50: '#fafafa', 100: '#f5f5f5', 200: '#e5e5e5', 300: '#d4d4d4', 400: '#a3a3a3', 500: '#737373', 600: '#525252', 700: '#404040', 800: '#262626', 900: '#171717', 950: '#0a0a0a' },
+    stone: { 50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 300: '#d6d3d1', 400: '#a8a29e', 500: '#78716c', 600: '#57534e', 700: '#44403c', 800: '#292524', 900: '#1c1917', 950: '#0c0a09' },
+  }[state.neutralScale] as Record<number, string>;
   
   // Color palettes for light/dark shade lookups
   const colorPalettes: Record<string, Record<number, string>> = {
@@ -235,8 +365,8 @@ export function TokenInspector() {
       case 'secondary-dark': return secondaryDarkHex;
       case 'accent': return accentHex;
       case 'accent-light': return accentLightHex;
-      case 'muted': return neutralColors[500] || '#6b7280';
-      case 'foreground': return neutralColors[900] || '#111827';
+      case 'muted': return neutralColors[state.bodyTextShade] || '#6b7280';
+      case 'foreground': return neutralColors[state.headingTextShade] || '#111827';
       case 'surface': return '#ffffff';
       case 'border': return neutralColors[200] || '#e5e7eb';
       default: return brandHex;
@@ -268,9 +398,9 @@ export function TokenInspector() {
         case 'accent-light':
           return { ...node, name: `Color.${capitalize(state.accentColor.family)}.100` };
         case 'muted':
-          return { ...node, name: `Color.${capitalize(state.neutralScale)}.500` };
+          return { ...node, name: `Color.${capitalize(state.neutralScale)}.${state.bodyTextShade}` };
         case 'foreground':
-          return { ...node, name: `Color.${capitalize(state.neutralScale)}.900` };
+          return { ...node, name: `Color.${capitalize(state.neutralScale)}.${state.headingTextShade}` };
         case 'border':
           return { ...node, name: `Color.${capitalize(state.neutralScale)}.200` };
         default:
