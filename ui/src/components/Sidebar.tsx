@@ -41,25 +41,55 @@ const navSections: NavSection[] = [
     ]
   },
   {
+    section: 'Tools',
+    items: [
+      { name: 'Theme Generator', href: '/generator', icon: Wand2, description: 'Create custom themes' },
+    ]
+  },
+  {
     section: 'Primitives',
     items: [
-      { name: 'Overview', href: '/tokens/primitives', icon: Hash, description: 'Raw values' },
-      { name: 'Colors', href: '/tokens/primitives/colors', icon: Palette, description: '22 color families' },
-      { name: 'Typography', href: '/tokens/typography', icon: Type, description: 'Type scale & fonts' },
-      { name: 'Spacing & Layout', href: '/tokens/spacing', icon: Ruler, description: '8px grid system' },
+      { 
+        name: 'Overview', 
+        href: '/tokens/primitives', 
+        icon: Hash, 
+        description: 'Raw values',
+        children: [
+          { name: 'Colors', href: '/tokens/primitives/colors', icon: Palette, description: '22 color families' },
+          { name: 'Typography', href: '/tokens/typography', icon: Type, description: 'Type scale & fonts' },
+          { name: 'Spacing & Layout', href: '/tokens/spacing', icon: Ruler, description: '8px grid system' },
+        ]
+      },
     ]
   },
   {
     section: 'Semantic Tokens',
     items: [
-      { name: 'Overview', href: '/tokens/semantic', icon: Sparkles, description: 'Role-based tokens' },
-      { name: 'Colors', href: '/tokens/colors', icon: Palette, description: 'Semantic colors' },
+      { 
+        name: 'Overview', 
+        href: '/tokens/semantic', 
+        icon: Sparkles, 
+        description: 'Role-based tokens',
+        children: [
+          { name: 'Colors', href: '/tokens/colors', icon: Palette, description: 'Semantic colors' },
+        ]
+      },
     ]
   },
   {
     section: 'Component Tokens',
     items: [
-      { name: 'Overview', href: '/tokens/components', icon: Component, description: 'Button, Card, Input' },
+      { 
+        name: 'Overview', 
+        href: '/tokens/components', 
+        icon: Component, 
+        description: 'Button, Card, Input',
+        children: [
+          { name: 'Buttons', href: '/tokens/components/buttons', icon: Square, description: 'Button tokens' },
+          { name: 'Cards', href: '/tokens/components/cards', icon: Box, description: 'Card tokens' },
+          { name: 'Inputs', href: '/tokens/components/inputs', icon: TextCursor, description: 'Input tokens' },
+        ]
+      },
     ]
   },
   {
@@ -68,20 +98,6 @@ const navSections: NavSection[] = [
       { name: 'Greenshift / WP', href: '/frameworks/greenshift', icon: Globe, description: 'WordPress mapping' },
     ]
   },
-  {
-    section: 'Components',
-    items: [
-      { name: 'Buttons', href: '/components/buttons', icon: Square, description: 'Button variants' },
-      { name: 'Cards', href: '/components/cards', icon: Box, description: 'Card layouts' },
-      { name: 'Inputs', href: '/components/inputs', icon: TextCursor, description: 'Form elements' },
-    ]
-  },
-  {
-    section: 'Tools',
-    items: [
-      { name: 'Theme Generator', href: '/generator', icon: Wand2, description: 'Create custom themes' },
-    ]
-  }
 ];
 
 export function Sidebar() {
@@ -165,9 +181,16 @@ export function Sidebar() {
                         />
                       )}
                     </Link>
-                    {/* Render children if they exist */}
+                    {/* Always render children if they exist */}
                     {item.children && item.children.length > 0 && (
-                      <ul className="ml-8 mt-1 space-y-1">
+                      <ul 
+                        className="relative mt-1 space-y-0.5"
+                        style={{ 
+                          marginLeft: 'var(--spacing-6)',
+                          paddingLeft: 'var(--spacing-3)',
+                          borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
+                        }}
+                      >
                         {item.children.map((child) => {
                           const childActive = pathname === child.href;
                           return (
@@ -176,19 +199,21 @@ export function Sidebar() {
                                 href={child.href}
                                 className="flex items-center gap-2 group transition-all duration-200"
                                 style={{
-                                  padding: `var(--spacing-2) var(--spacing-3)`,
+                                  padding: `var(--spacing-1-5) var(--spacing-2)`,
                                   borderRadius: 'var(--radius-md)',
                                   backgroundColor: childActive ? 'rgba(42, 175, 184, 0.15)' : 'transparent',
                                   color: childActive ? 'var(--sidebar-text-active)' : 'var(--sidebar-text)',
                                 }}
                               >
                                 <child.icon 
-                                  className="w-4 h-4 opacity-80"
+                                  className="w-4 h-4 opacity-70"
                                   color={childActive ? 'var(--sidebar-accent)' : 'currentColor'}
                                 />
                                 <span 
-                                  className="font-medium"
-                                  style={{ fontSize: 'var(--font-size-caption)' }}
+                                  style={{ 
+                                    fontSize: 'var(--font-size-caption)',
+                                    fontWeight: childActive ? 500 : 400,
+                                  }}
                                 >
                                   {child.name}
                                 </span>
