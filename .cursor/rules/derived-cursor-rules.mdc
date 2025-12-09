@@ -203,13 +203,12 @@ interface Token {
 *   The secondary color should also load at shade 400 like the brand and accent do.
 *   In the Theme Generator, the button in the left sidebar that navigates back to the dashboard must say "Back to dashboard".
 *   Always make all of the swatch cards the same larger size.
-*   Always stack the token chain badges vertically with 2 vertical arrows between them, following the same pattern as the token chain sidebar panel.
+*   **Rollback:** Revert the token chain display to horizontal (left to right) from raw value to the output layer (component/greenshift/semantic).
 *   Always follow the styling of the badges in the token reference chain callout, using the same icon as the page the token is from. So instead of a cube for the component variable badge, use the same icon as the Component Tokens page H1.
 *   Always follow the reference chain pattern and dot notation to include the component variable after the icon instead of just saying component (e.g., "Button.Background").
 *   Update the Greenshift variable page to match the same token chain styles and icons, using the globe icon for the GRS page for consistency.
 *   The last token layer should be at the top in the token chain elements. All the arrows in these elements need to point up and not down, even in the Token Chain part of Generator
 *   Center align the arrows and badges in the token chain displays.
-*   **Rollback:** Revert the token chain display to horizontal (left to right) from raw value to the output layer (component/greenshift/semantic).
 
 ## DEBUGGING
 
